@@ -1,0 +1,44 @@
+@import "global-set";
+$nav-font-size: 14px;
+$bg-color: #34495e;
+$h: 36px;
+.common-header {
+  background-color: $bg-color;
+  overflow: hidden;
+  height: $h;
+  min-width: $global-w;
+  font-size: $nav-font-size;
+}
+.common-header-list {
+  float: right;
+  margin-right: 50px;
+}
+.common-header-aside{
+  float: right;
+}
+.common-header-item{
+  float: left;
+  color: #fff;
+  line-height: $h;
+}
+.index{
+  padding-left: 6px;
+}
+.index-font,
+.home-pic{
+  vertical-align: middle;
+}
+.home-pic{
+  background: url("/static/img/common/home.png") no-repeat;
+  //background-size: 100%;
+  width: 18px;
+  height: 16px;
+}
+.what-campus{
+  padding-left: 24px;
+  padding-right: 24px;
+}
+.login-or-register{
+  padding-left: 17px;
+  padding-right: 17px;
+}

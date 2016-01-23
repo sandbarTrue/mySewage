@@ -1,0 +1,1 @@
+{"version":3,"file":"page/proDetail.css","sources":["page/proDetail.scss"],"sourcesContent":["\r\n/*headings*/\r\nh5{\r\n  font-family: \"Microsoft YaHei\", montserrat;\r\n  font-size : 20px;\r\n  font-weight: bold;\r\n}"],"mappings":"AACA,YAAY;AACZ,EAAE,CAAA;EACA,WAAW,EAAE,6BAA8B;EAC3C,SAAS,EAAG,IAAK;EACjB,WAAW,EAAE,IAAK,GACnB","names":[],"sourceRoot":"/source/"}

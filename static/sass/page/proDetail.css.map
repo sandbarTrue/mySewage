@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AACA,YAAY;AACZ,EAAE;EACA,WAAW,EAAE,6BAA6B;EAC1C,SAAS,EAAG,IAAI;EAChB,WAAW,EAAE,IAAI",
+"sources": ["proDetail.scss"],
+"names": [],
+"file": "proDetail.css"
+}

@@ -1,0 +1,21 @@
+$global-top:236px;
+$global-w:1092px;
+$global-bottom:264px;
+$global-fontbg:#f8f8f8;
+$global-font:#5c5c5c;
+$global-bg:#00caab;
+$bg-color: #34495e;
+/*to 1092px center*/
+.global-center{
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: $global-top;
+  margin-bottom: $global-bottom;
+  width: $global-w;
+}
+/*for ie6/7*/
+.inline-block{
+  display:inline-block;
+  *display:inline;
+  *zoom:1;
+}

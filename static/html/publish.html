@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>发布需求</title>
+
+<link rel="stylesheet" type="text/css" href="../css/lib/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="../css/global.css">
+<link rel="stylesheet" type="text/css" href="../css/page/publish.css">
+
+</head>
+<body>
+
+<!-- header -->
+
+<!-- publish demands -->
+<div class="global-center">
+	<!-- progress -->
+	<article class="htmleaf-content">
+		<!-- multistep form -->
+		<form id="msform" action="#" method="get" enctype="multipart/form-data" autocomplete="on" target="_self">
+			<!-- progressbar -->
+			<ul id="progressbar">
+				<li class="active">需求描述</li>
+				<li>设置赏金</li>
+				<li>确认信息</li>
+				<li>发布成功</li>
+			</ul>
+			<!-- fieldsets -->
+			<!-- 需求描述 -->
+			<fieldset>
+				<h2 class="fs-title">需求描述</h2><hr>
+				<span>项目名称：</span>
+				<input type="text" name="proName" placeholder="给你的项目起一个霸气的名字吧^_^" autofocus style="width:20em;" /><br>
+				<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;简述：</span>
+				<input type="text" name="briefIntro" placeholder="一句话描述你的项目"/><br>
+				<span class="detail">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;详情：</span>
+				<textarea name="proDetail" placeholder="详细描述你的项目要求" cols="20em"></textarea><br>
+				<input type="file" name="proFile" /><br>
+				<span>截止日期：</span>
+				<input type="text" name="proDeadline" placeholder="例:2015-12-21" /><br>
+				<input type="button" name="next" class="next action-button" value="Next" />
+			</fieldset>
+			<!-- 设置赏金 -->
+			<fieldset>
+				<h2 class="fs-title">设置赏金</h2><hr>
+				<span>工程预算：</span>
+				<input type="text" name="proBudget" /> 元<br>
+				<a class="btn-pay" href="#">支付</a>
+				<sub>点击跳转第三方支付平台</sub><br>
+				<input type="button" name="previous" class="previous action-button" value="Previous" />
+				<input type="button" name="next" class="next action-button" value="Next" />
+			</fieldset>
+			<!-- 确认信息 -->
+			<fieldset>
+				<h2 class="fs-title">确认信息</h2><hr>
+				<span>项目名称：</span><span></span><br>				
+				<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;简述：</span><span></span><br>
+				<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;详情：</span><span></span><br>
+				<span>截止日期：</span><span></span><br>
+				<span>工程预算：</span><span></span><br>				
+				<input type="button" name="previous" class="previous action-button" value="Previous" />
+				<input type="submit" name="submit" class="next action-button submit action-button" value="Submit" onclick="startCount()" />
+			</fieldset>
+			<fieldset>
+				<h2 class="fs-title">发布成功</h2><hr>
+				<h1>您已发布成功！</h1><br>
+				<span id="second">5</span><p>秒后跳转至需求详情...</p>
+			</fieldset>
+		</form>
+	</article>
+	<!-- 发布成功 -->
+</div>
+	
+<!-- footer -->
+
+<script src='../js/lib/jquery.js'></script>
+<script src='../js/lib/jquery.easing.min.js'></script>
+<script src='../js/page/publish.js'></script>
+
+</body>
+</html>

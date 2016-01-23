@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>需求详情</title>
+
+<link rel="stylesheet" type="text/css" href="../css/lib/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="../css/global.css">
+<link rel="stylesheet" type="text/css" href="../css/page/proDetail.css">
+
+</head>
+<body>
+
+	<!-- headr -->
+
+	<!-- 需求详情 -->
+	<h5>首页 > 需求大厅 > 需求详情</h5>
+	<article>
+		<table>
+			<tr>
+				<td rowspan="2"><img src=""/></td>		<!-- 徽章 -->
+				<td><h3>需求名：</h3></td>		<!-- 项目名称 -->
+			</tr>
+			<tr>
+				<td><p>￥</p></td>		<!-- 工程预算 -->
+			</tr>
+			<tr>
+				<td colspan="2"><hr></td>
+			</tr>
+			<tr>
+				<td colspan="2"></td>		<!-- 项目进度 -->
+			</tr>
+			<tr>
+				<td colspan="2"><hr></td>
+			</tr>
+			<tr>
+				<td colspan="2"><p>需求号：</p></td>		<!-- 项目ID -->
+			</tr>
+			<tr>
+				<td colspan="2"><p>共<span></span>份标书</p></td>		<!-- 标书数目 -->
+			</tr>
+			<tr>
+				<td colspan="2"><p>需求详情：</p></td>		<!-- 项目要求详情 -->
+			</tr>
+		</table>
+	</article>
+	<!-- 我要交稿 -->
+	<article>
+		<h5>我要交稿</h5><hr>
+		<section>
+			<form action="#" method="get" enctype="multipart/form-data">
+				<table>
+					<tr>
+						<td><textarea placeholder="请输入您的标书简述"></textarea></td>
+					</tr>
+					<tr>
+						<td><input type="file" name="bidFile"/></td>
+					</tr>
+					<tr>
+						<td><input type="submit" value="提交" class=""/></td>
+					</tr>
+				</table>
+			</form>
+		</section>
+	</article>
+	<!-- 已交标书 -->
+	<article>
+		<h5>已交标书</h5><hr>
+		<!-- Ajax轮询进行章节渲染 -->
+		<section>
+			<table>
+				<tr>
+					<td rowspan="2"><img src=""/></td>		<!-- 徽章 -->
+					<td><h5></h5></td>		<!-- 公司名 -->
+					<td colspan="2" rowspan="3"></td>
+				</tr>
+				<tr>
+					<td><p>简述：</p></td>		<!-- 简述 -->
+				</tr>
+				<tr>
+					<td colspan="2" rowspan="2"></td>
+				</tr>
+				<tr>
+					<td><p>提交时间：</p></td>		<!-- 提交时间 -->
+					<td><p>稿件号：</p></td>		<!-- 稿件号 -->
+				</tr>
+			</table>
+			<hr>
+		</section>
+		<button class="" onclick="javascript:void()">点击查看更多</button>
+	</article>
+
+	<!-- footer -->
+
+</body>
+</html>

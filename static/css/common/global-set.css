@@ -1,0 +1,15 @@
+/*to 1092px center*/
+.global-center {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 236px;
+  margin-bottom: 264px;
+  width: 1092px; }
+
+/*for ie6/7*/
+.inline-block {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1; }
+
+/*# sourceMappingURL=../maps/common/global-set.css.map */
