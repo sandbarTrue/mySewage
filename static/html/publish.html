@@ -38,7 +38,7 @@
 				<textarea name="proDetail" placeholder="详细描述你的项目要求" cols="20em"></textarea><br>
 				<input type="file" name="proFile" /><br>
 				<span>截止日期：</span>
-				<input type="text" name="proDeadline" placeholder="例:2015-12-21" /><br>
+				<input type="text" name="proDeadline" placeholder="例:20151221" /><br>
 				<input type="button" name="next" class="next action-button" value="Next" />
 			</fieldset>
 			<!-- 设置赏金 -->
@@ -54,11 +54,11 @@
 			<!-- 确认信息 -->
 			<fieldset>
 				<h2 class="fs-title">确认信息</h2><hr>
-				<span>项目名称：</span><span></span><br>				
-				<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;简述：</span><span></span><br>
-				<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;详情：</span><span></span><br>
-				<span>截止日期：</span><span></span><br>
-				<span>工程预算：</span><span></span><br>				
+				<span>项目名称：</span><span id="1"></span><br>				
+				<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;简述：</span><span id="2"></span><br>
+				<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;详情：</span><span id="3"></span><br>
+				<span>截止日期：</span><span id="4"></span><br>
+				<span>工程预算：</span><span id="5"></span><br>				
 				<input type="button" name="previous" class="previous action-button" value="Previous" />
 				<input type="submit" name="submit" class="next action-button submit action-button" value="Submit" onclick="startCount()" />
 			</fieldset>
