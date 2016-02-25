@@ -52,7 +52,7 @@ hr {
   border-color: #AFB3BC; }
 
 /*inputs*/
-#msform input {
+input {
   height: 1em;
   padding: 15px;
   border: 1px solid #ccc;
@@ -67,6 +67,12 @@ hr {
   width: 30em;
   vertical-align: top; }
 
+#btn-file {
+  height: 2em;
+  padding: 0;
+  border: none;
+  margin-left: 175px; }
+
 /*buttons*/
 #msform .action-button {
   display: inline-block;
@@ -78,11 +84,18 @@ hr {
   border: 0 none;
   border-radius: 1px;
   cursor: pointer;
-  padding: 10px 5px;
-  margin-left: 80%; }
+  padding: 10px 5px; }
 
 #msform .action-button:hover, #msform .action-button:focus {
   box-shadow: 0 0 0 2px white, 0 0 0 3px #27AE60; }
+
+.previous {
+  position: relative;
+  margin-left: 58%;
+  top: 4em; }
+
+.next {
+  margin-left: 80%; }
 
 .btn-pay {
   display: inline-block;
@@ -93,7 +106,7 @@ hr {
   font-weight: bold;
   color: white;
   cursor: pointer;
-  margin-left: 8em;
+  margin-left: 8.5em;
   text-indent: 4em; }
 
 /*progressbar*/
