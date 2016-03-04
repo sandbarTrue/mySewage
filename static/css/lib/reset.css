@@ -2,9 +2,6 @@
 /****************************************/
 /*  功能：base                          */
 /****************************************/
-/*引进iconfont*/
-@import url(iconfont.css);
-
 html {
   min-height: 100%;
   margin:0;padding:0; 
