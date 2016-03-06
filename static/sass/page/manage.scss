@@ -1,0 +1,190 @@
+@import '../lib/reset.css';
+@import '../lib/buttons';
+
+/*header & footer*/
+header,footer{
+	height: 140px;
+	background: #52BAC7;
+	line-height: 140px;
+}
+header h2{
+	color: white;
+	font-size: 66px;
+}
+header a{
+	color: white;
+	font-weight: bold;
+	font-size: 22px;
+	margin-left: 100px;
+}
+.clear-backend {
+	background: #fff;
+	width: 100%;
+	position: relative;
+}
+
+.avatar {
+	background: #f0f0f0;
+	width: 200px;
+	height: 200px;
+}
+
+.avatar div {
+	width: 150px;
+	height: 150px;
+	border-radius: 50%;
+	overflow: hidden;
+	position: relative;
+	top: 25px;
+	left: 25px;
+}
+
+.avatar div img {
+	width: 100%;
+	height: auto;
+}
+
+.clear-backend > input {
+	position: absolute;
+	filter: alpha(opacity=0);
+	opacity: 0;
+}
+
+.clear-backend > input:hover {
+	cursor: pointer;
+}
+
+.clear-backend > input:hover + span,
+.clear-backend > input:checked + span {
+	background: #fff;
+	color: #1ABC9C;
+}
+.clear-backend > input:checked + span + i {
+	color: #1ABC9C;
+}
+
+.clear-backend > i {
+	position: absolute;
+	margin-top: -40px;
+	padding: 0 20px;
+	font-size: 20px;
+}
+
+.clear-backend > span,
+.clear-backend > i {
+	-webkit-transition: all .5s;
+	   -moz-transition: all .5s;
+		 -o-transition: all .5s;
+			transition: all .5s;
+}
+
+.clear-backend > input,
+.clear-backend > span {
+	background: #f0f0f0;
+	display: block;
+	width: 200px;
+	height: 60px;
+	line-height: 60px;
+	text-align: center;
+	z-index: 9;
+}
+
+.tab-content {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: calc(100% - 200px);
+	height: 100%;
+	padding-top: 60px;
+	overflow: hidden;
+}
+
+.tab-content section {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	padding: 20px;
+	display: none;
+}
+
+.clear-backend > input.tab-1:checked ~ .tab-content .tab-item-1 {
+	display: block;
+}
+
+.clear-backend > input.tab-2:checked ~ .tab-content .tab-item-2 {
+	display: block;
+}
+
+.clear-backend > input.tab-3:checked ~ .tab-content .tab-item-3 {
+	display: block;
+}
+
+.clear-backend > input.tab-4:checked ~ .tab-content .tab-item-4 {
+	display: block;
+}
+
+.clear-backend > input.tab-5:checked ~ .tab-content .tab-item-5 {
+	display: block;
+}
+
+.clear-backend > input.tab-6:checked ~ .tab-content .tab-item-6 {
+	display: block;
+}
+
+.clear-backend > input.tab-7:checked ~ .tab-content .tab-item-7 {
+	display: block;
+}
+
+.clear-backend > input.tab-8:checked ~ .tab-content .tab-item-8 {
+	display: block;
+}
+
+.clear-backend > input.tab-9:checked ~ .tab-content .tab-item-9 {
+	display: block;
+}
+
+.clear-backend > input.tab-10:checked ~ .tab-content .tab-item-10 {
+	display: block;
+}
+
+
+/* Responsive */
+
+@media screen and (max-width: 1367px) {
+}
+
+@media screen and (max-width: 1281px) {
+}
+
+@media screen and (max-width: 1025px) {
+}
+
+@media only screen and (max-width: 961px) {
+}
+
+@media only screen and (max-width: 641px) {
+	.avatar, 
+	.clear-backend > input,
+	.clear-backend > span {
+		width: 60px;
+		height: 60px;
+	}
+	.clear-backend > span {
+		filter: alpha(opacity=0);
+		opacity: 0;
+	}
+	.avatar div {
+		width: 40px;
+		height: 40px;
+		border-radius: 50%;
+		top: 5px;
+		left: 5px;
+	}
+	.top-bar,
+	.tab-content {
+	width: calc(100% - 60px);
+	}
+}
+
+@media only screen and (max-width: 481px) {
+}
