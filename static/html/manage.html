@@ -7,45 +7,98 @@
 <body>
 	<header>
 		<h2>啦啦啦外包平台</h2>
-		<i></i><a>返回首页</a>
+		<i></i><a href="index.html">返回首页</a>
 	</header>
-	<div class="clear-backend">
-	<div class="avatar">
-		<div>
-			<a href="http://www.weibo.com/518501269" target="_blank">
-				<img src="../img/test.png" alt="">
-			</a>
+	<div class="backend">
+		<div class="avatar">
+			<div>
+				<a href="about.html" target="_blank">
+					<img src="../img/test.png" alt="">
+				</a>
+			</div>
+			<h5>火星公司</h5>
+		</div>
+
+		<!-- tab-menu -->
+			<input type="radio" class="tab-1" name="tab" checked="checked">
+			<span>我的任务</span>
+
+			<input type="radio" class="tab-2" name="tab">
+			<span>我的需求</span>
+
+			<input type="radio" class="tab-3" name="tab">
+			<span>我的合同</span>
+
+			<input type="radio" class="tab-4" name="tab">
+			<span>个人中心</span>
+
+		<!-- tab-content -->
+		<div class="tab-content">
+			<section class="tab-item-1">
+				<h1>我的任务</h1><hr color="#E3E3E3">
+				<div class="orders">
+					<table rules="all">
+						<tr>
+							<td rowspan="3" width="120px">
+								<img src="../img/test.png">
+							</td>
+							<td width="300px">
+								<h2>Yousimate</h2>
+							</td>
+							<td width="200px">
+								<h5>工作时间&nbsp;&nbsp;10天</h5>
+							</td>
+							<td rowspan="2">
+								<!-- icon -->
+							</td>
+						</tr>
+						<tr>
+							<td width="300px">
+								<h6>定稿</h6>
+							</td>
+							<td width="200px">
+								<h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;预算&nbsp;&nbsp;70万</h5>
+							</td>
+						</tr>
+						<tr>
+							<td colspan="3">
+								<div class="progress">
+  									<div class="progress-bar progress-bar-info progress-bar-striped" role="progressbar" style="width: 50%">
+    									<span class="sr-only">
+    										50% Complete
+    									</span>
+  									</div>
+								</div>
+							</td>
+						</tr>
+					</table>
+				</div>
+			</section>
+			<section class="tab-item-2">
+				<h1>我的需求</h1><hr color="#E3E3E3">
+				<div class="orders">
+					<table>
+						<tr></tr>
+						<tr></tr>
+						<tr></tr>
+					</table>
+				</div>
+			</section>
+			<section class="tab-item-3">
+				<h1>我的合同</h1><hr color="#E3E3E3">
+				<div class="orders">
+					<table>
+						<tr></tr>
+						<tr></tr>
+						<tr></tr>
+					</table>
+				</div>
+			</section>
+			<section class="tab-item-4">
+				<h1>个人中心</h1><hr color="#E3E3E3">
+			</section>
 		</div>
 	</div>
 
-	<!-- tab-menu -->
-	<input type="radio" class="tab-1" name="tab" checked="checked">
-	<span>Home</span><i class="fa fa-home"></i>
-
-	<input type="radio" class="tab-2" name="tab">
-	<span>Posts</span><i class="fa fa-medium"></i>
-
-	<input type="radio" class="tab-3" name="tab">
-	<span>Users</span><i class="fa fa-user"></i>
-
-	<input type="radio" class="tab-4" name="tab">
-	<span>Comments</span><i class="fa fa-comment"></i>
-
-	<!-- tab-content -->
-	<div class="tab-content">
-		<section class="tab-item-1">
-			<h1>One</h1>
-		</section>
-		<section class="tab-item-2">
-			<h1>Two</h1>
-		</section>
-		<section class="tab-item-3">
-			<h1>Three</h1>
-		</section>
-		<section class="tab-item-4">
-			<h1>Four</h1>
-		</section>
-	</div>
-	<footer></footer>
 </body>
 </html>

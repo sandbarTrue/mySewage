@@ -16,3 +16,8 @@
   -moz-osx-font-smoothing: grayscale;
 }
 .icon-mainhook:before { content: "\e657"; }
+.pencil:before { content: "&#xe604"; }
+.rubbish:before { content: "&#xe610"; }
+.xinxi:before { content: "&#xf00fb"; }
+.sousuo:before { content: "&#xf00d9"; }
+.diantileimu:before { content: "&#x3473"; }
