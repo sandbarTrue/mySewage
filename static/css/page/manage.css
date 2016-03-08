@@ -1,4 +1,5 @@
 @import url(../../css/lib/bootstrap.css);
+@import url(../../css/lib/iconfont.css);
 /*buttons*/
 .btn {
   display: inline-block;
