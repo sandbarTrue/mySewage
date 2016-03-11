@@ -64,6 +64,7 @@ var current_fs, next_fs, previous_fs;
 	$('.submit').click(function () {
 	    return false;
 	});
+
 /*发布需求成功后跳转*/
 var num = document.getElementById('second').innerHTML;
 //获取显示秒数的元素，通过定时器来更改秒数。
@@ -75,3 +76,40 @@ function startCount() {
    		location.assign("需求详情页");
 	}
 }
+
+/*表单验证*/
+$(function (){
+    $("#msform").validate(
+    {
+        //验证规则
+        rules :{
+            proName:{
+                required: true,
+                minlength: 6
+            },
+            proDetail:{
+                required: true,
+                minlength: 6
+            },
+            proDeadline:{
+            	required: true,
+            	minlength: 8,
+            	maxlength: 8
+            },
+            proBudget:{
+            	required: true,
+            	minlength: 2
+            }
+        },
+        //错误提示信息
+        errorPlacement: function (error, element){
+            error.appendTo(element.siblings("span").css("color","red"));
+        }
+    }
+    );
+	$("[name='proName']").value.appendTo("#1");
+	$("[name='briefIntro']").value.appendTo("#2");
+	$("[name='proDetail']").value.appendTo("#3");
+	$("[name='proDeadline']").value.appendTo("#4");
+	$("[name='proBudget']").value.appendTo("#5");  
+});

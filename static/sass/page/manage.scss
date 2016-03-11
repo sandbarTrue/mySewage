@@ -1,0 +1,177 @@
+@import '../../css/lib/bootstrap.css';
+@import '../../css/lib/iconfont.css';
+@import '../../css/lib/font-awesome.css';
+@import '../lib/editor';
+@import '../lib/buttons';
+
+/*reset*/
+body,div,section,header,table,tr,td,h1,h2,h3,h4,h5,h6 {
+	margin: 0;
+	padding: 0;
+	outline: 0;
+}
+body {
+	font-family: "Microsoft Yahei";
+	font-size: 16px;
+	min-height: 100%;
+    color: #5c5c5c;
+}
+
+/*header*/
+header {
+	height: 140px;
+	background: #52BAC7;
+	position: relative;
+}
+header h2 {
+	position: absolute;
+	color: white;
+	font-size: 60px;
+	margin-top: 57px;
+	margin-left: 66px;
+}
+header a {
+	position: absolute;
+	color: white;
+	font-weight: bold;
+	font-size: 22px;
+	margin-top: 90px;
+	margin-left: 1200px;
+	text-decoration: none;
+}
+.backend {
+	background: #fff;
+	width: 100%;
+	position: relative;
+}
+
+.avatar {
+	background: #fff;
+	width: 250px;
+	height: 290px;
+	text-align: center;
+	border: 1px solid #E3E3E3;
+	margin-top: 100px;
+	margin-left: 66px;
+	margin-bottom: 32px;
+}
+
+.avatar div {
+	width: 250px;
+	height: 250px;
+	overflow: hidden;
+	position: relative;
+}
+
+.avatar div img {
+	width: 100%;
+	height: auto;
+}
+.avatar h5{
+	font-size: 20px;
+	margin-top: 10px;
+}
+
+/*tab-menu*/
+.backend > input,
+.backend > span {
+	background: #fff;
+	display: block;
+	width: 250px;
+	height: 66px;
+	line-height: 66px;
+	font-size: 22px;
+	text-align: center;
+	z-index: 9;
+}
+
+.backend > input {
+	position: absolute;
+	filter: alpha(opacity=0);
+	opacity: 0;
+}
+
+.backend > span {
+	margin-left: 66px;
+	border: 1px solid #E3E3E3;
+}
+
+.backend > input:hover {
+	cursor: pointer;
+}
+
+.backend > input:hover + span,
+.backend > input:checked + span {
+	background: #fff;
+	color: #52BAC7;
+}
+
+/*tab-content*/
+.tab-content {
+	position: absolute;
+	width: 900px;	
+	height: 100%;
+	top: 0;
+	margin-left: 404px;
+}
+
+.tab-content section {
+	position: absolute;
+	width: 900px;
+	height: 100%;
+	display: none;
+}
+
+/*orders*/
+.orders {
+	width: 900px;
+	height: 180px;
+	border: 1px solid #E3E3E3;
+	margin-top: 32px;
+}
+.orders table {
+	width: 846px;
+	height: 120px;
+	border: 1px solid black;
+	margin-top: 27px;
+	margin-left: 22px;
+}
+.orders table img {
+	width: 120px;
+	height: 120px;
+}
+.orders table h2 {
+	font-size: 24px;
+	margin-left: 24px;
+}
+.orders table h5 {
+	font-size: 16px;
+	margin-left: 24px;
+}
+.orders table h6 {
+	font-size: 14px;
+	margin-left: 24px;
+	color: #52BAC7;
+}
+.orders table .progress {
+	width: 278px;
+	height: 16px;
+	margin-top: 10px;
+	margin-left: 24px;
+}
+
+.backend > input.tab-1:checked ~ .tab-content .tab-item-1 {
+	display: block;
+}
+
+.backend > input.tab-2:checked ~ .tab-content .tab-item-2 {
+	display: block;
+}
+
+.backend > input.tab-3:checked ~ .tab-content .tab-item-3 {
+	display: block;
+}
+
+.backend > input.tab-4:checked ~ .tab-content .tab-item-4 {
+	display: block;
+}

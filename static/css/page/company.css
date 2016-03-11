@@ -1,0 +1,127 @@
+@import url(../lib/reset.css);
+/*buttons*/
+.btn {
+  display: inline-block;
+  width: 180px;
+  height: 60px;
+  line-height: 60px;
+  background: #52BAC7;
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  border: none; }
+
+article {
+  margin-top: 288px; }
+
+h4, section {
+  margin-left: 137px; }
+
+h4 {
+  font-weight: bold;
+  font-size: 16px; }
+
+section {
+  width: 1096px;
+  height: 273px;
+  margin-top: 30px;
+  border: 1px solid #E3E3E3; }
+
+.menubar {
+  margin-top: 52px;
+  height: 100px; }
+
+.menubar button {
+  height: 48px;
+  line-height: 42px;
+  margin-top: 28px; }
+
+.btn-sort {
+  width: 122px;
+  margin-left: 20px; }
+
+.btn-pub {
+  width: 152px;
+  margin-left: 480px; }
+
+.btn-load {
+  width: 200px;
+  height: 60px;
+  margin-top: 78px;
+  margin-left: 583px; }
+
+a:link {
+  text-decoration: none;
+  color: white; }
+
+a:visited {
+  text-decoration: none;
+  color: white; }
+
+a:hover {
+  text-decoration: none;
+  color: white; }
+
+a:active {
+  text-decoration: none;
+  color: white; }
+
+/*company cards*/
+section table {
+  margin: 20px; }
+
+section table img {
+  width: 200px;
+  height: 200px; }
+
+section table h2 {
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  padding: 40px 20px;
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+  background: #52BAC7;
+  border-radius: 4px;
+  margin-left: 132px; }
+
+section .jRate {
+  margin-left: 138px;
+  margin-bottom: 32px; }
+
+section table h3, section table h5 {
+  margin-left: 16px; }
+
+section table h3 {
+  display: inline-block;
+  padding: 2px 10px;
+  font-family: "Microsoft Yahei";
+  font-weight: bold;
+  font-size: 24px;
+  color: white;
+  background: #52BAC7;
+  border-radius: 4px; }
+
+section table h5 {
+  font-size: 16px;
+  color: #848484; }
+
+section table h6 {
+  font-size: 14px;
+  margin-top: 16px;
+  color: #B4B4B4; }
+
+section table a {
+  margin-left: 200px;
+  color: #848484;
+  cursor: pointer; }
+  section table a:link {
+    color: #848484; }
+  section table a:visited {
+    color: #848484; }
+  section table a:hover {
+    color: black; }
+
+/*# sourceMappingURL=../maps/page/company.css.map */

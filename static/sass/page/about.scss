@@ -1,0 +1,79 @@
+@import '../lib/reset.css';
+
+article{
+    margin-top: 288px;
+}
+h4{
+    margin-left: 137px;
+    font-weight: bold;
+    font-size: 16px;
+}
+.page_container{
+    margin-top: 35px;
+    margin-left: 330px;
+    width: 900px;
+}
+.page_container section{
+    width: 900px;
+    margin-top: 32px;
+    padding: 30px;
+    border: 1px solid #E3E3E3;
+}
+.page_container section h2{
+    font-size: 24px;
+    font-weight: bold;
+}
+.page_container section p{
+    font-size: 16px;
+    color: #848484;
+    margin-top: 16px;
+}
+/*jump to*/
+.jumpto-cotainer {
+    position: relative;
+}
+.jumpto-subnav {
+    position: absolute;
+    top: 0;
+    left: -193px;
+    width: 120px;
+}
+.jumpto-subnav.fixed {
+    position: fixed !important;
+    left: auto;
+    top: 25px;
+    margin-left: -193px;
+}
+.jumpto-subnav.fixed.bottom {
+    top: auto;
+    bottom: 0;
+    position: absolute !important;
+}
+.jumpto-subnav ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.jumpto-subnav ul li{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border: 1px solid #E3E3E3;
+    border-left: none;
+}
+.jumpto-subnav ul li a {
+    display: block;
+    box-sizing: border-box; 
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    font-size: 16px;
+    height: 48px;
+    line-height: 48px;
+    font-weight: bold;
+    &:hover{
+        color: #52BAC7;
+    };
+}
+.jumpto-title, .jumpto-close a{
+    display: none;
+}

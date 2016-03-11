@@ -1,0 +1,101 @@
+/*editor*/
+.wysiwyg-container {
+  width: 900px;
+  height: 530px;
+  margin-top: -30px;
+  margin-left: -20px;
+  border: 1px solid #E3E3E3;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+}
+
+.wysiwyg-textarea {
+  display: block;
+  width: 900px;
+  height: 360px;
+  padding: 0;
+}
+
+.wysiwyg-editor {
+  height: 360px;
+  padding: 10px;
+  overflow: auto;
+  outline: none;
+  -ms-word-wrap: break-word;
+  word-wrap: break-word;
+  border-bottom: 1px solid #E3E3E3;
+}
+
+.wysiwyg-toolbar {
+  height: 50px;
+  background: #F5F5F5;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.wysiwyg-toolbar-top {
+  border-bottom: 1px solid #E3E3E3;
+  padding: 0;
+}
+
+.wysiwyg-toolbar-bottom {
+  border-top: 1px solid #cccccc;
+  padding: 0 5px;
+}
+
+.wysiwyg-toolbar-icon {
+  display: -moz-inline-stack;
+  display: inline-block;
+  *display: inline;
+  margin: 0;
+  padding: 0;
+  color: #767676;
+  text-decoration: none;
+  *zoom: 1;
+  vertical-align: middle;
+  cursor: pointer;
+  -moz-user-select: none;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  width: 50px;
+  height: 50px;
+  padding: 12px;
+  font: 25px FontAwesome;
+}
+
+.wysiwyg-toolbar-icon:hover {
+  color: HighlightText;
+  background-color: Highlight;
+}
+
+/* CSS for the font-name + font-size plugin */
+.wysiwyg-toolbar-list {
+  background: #fff;
+  max-height: 16em;
+  overflow: auto;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  border: 1px solid #E3E3E3;
+}
+
+.wysiwyg-toolbar-list a,
+.wysiwyg-toolbar-list a:link,
+.wysiwyg-toolbar-list a:visited {
+  display: block;
+  color: black;
+  padding: 5px 10px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.wysiwyg-toolbar-list a:hover {
+  color: HighlightText;
+  background-color: Highlight;
+}
+
+/*# sourceMappingURL=editor.css.map */

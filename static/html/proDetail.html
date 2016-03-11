@@ -14,33 +14,39 @@
 	<!-- headr -->
 
 	<!-- 需求详情 -->
-	<h5>首页 > 需求大厅 > 需求详情</h5>
+	<h5 style="margin-left: 140px">首页 > 需求大厅 > 需求详情</h5>
 	<article>
 		<table>
 			<tr>
-				<td rowspan="2"><img src=""/></td>		<!-- 徽章 -->
-				<td><h3>需求名：</h3></td>		<!-- 项目名称 -->
+				<td width="100px" rowspan="2"><img src="../img/proDetail/demand.jpg"/></td>		<!-- 徽章 -->
+				<td width="960px"><h3>需求名：</h3></td>		<!-- 项目名称 -->
 			</tr>
 			<tr>
-				<td><p>￥</p></td>		<!-- 工程预算 -->
-			</tr>
-			<tr>
-				<td colspan="2"><hr></td>
-			</tr>
-			<tr>
-				<td colspan="2"></td>		<!-- 项目进度 -->
+				<td><p><b>￥元</b></p></td>		<!-- 工程预算 -->
 			</tr>
 			<tr>
 				<td colspan="2"><hr></td>
 			</tr>
 			<tr>
-				<td colspan="2"><p>需求号：</p></td>		<!-- 项目ID -->
+				<td colspan="2">		<!-- 项目进度 -->
+					<ul id="progressbar">
+						<li class="active">&nbsp;招标</li>
+						<li>&nbsp;定稿</li>
+						<li>&nbsp;公示</li>
+					</ul>
+				</td>
 			</tr>
 			<tr>
-				<td colspan="2"><p>共<span></span>份标书</p></td>		<!-- 标书数目 -->
+				<td colspan="2"><hr></td>
 			</tr>
 			<tr>
-				<td colspan="2"><p>需求详情：</p></td>		<!-- 项目要求详情 -->
+				<td height="40px" colspan="2"><p>需求号：</p></td>		<!-- 项目ID -->
+			</tr>
+			<tr>
+				<td height="40px" colspan="2"><p>共<span></span>份标书</p></td>		<!-- 标书数目 -->
+			</tr>
+			<tr>
+				<td width="600px" height="80px" colspan="2"><p>需求详情：</p></td>		<!-- 项目要求详情 -->
 			</tr>
 		</table>
 	</article>
@@ -51,13 +57,13 @@
 			<form action="#" method="get" enctype="multipart/form-data">
 				<table>
 					<tr>
-						<td><textarea placeholder="请输入您的标书简述"></textarea></td>
+						<td><textarea rows="11" cols="100" placeholder="请输入您的标书简述"></textarea></td>
 					</tr>
 					<tr>
 						<td><input type="file" name="bidFile"/></td>
 					</tr>
 					<tr>
-						<td><input type="submit" value="提交" class=""/></td>
+						<td><input type="submit" value="提交" class="btn-sub" action="" /></td>
 					</tr>
 				</table>
 			</form>
@@ -70,24 +76,24 @@
 		<section>
 			<table>
 				<tr>
-					<td rowspan="2"><img src=""/></td>		<!-- 徽章 -->
+					<td rowspan="2" id="badge"></td>		<!-- 徽章 -->
 					<td><h5></h5></td>		<!-- 公司名 -->
 					<td colspan="2" rowspan="3"></td>
 				</tr>
 				<tr>
-					<td><p>简述：</p></td>		<!-- 简述 -->
+					<td width="600px" height="60px"><p id="bidDetail">简述：</p></td>		<!-- 简述 -->
 				</tr>
 				<tr>
 					<td colspan="2" rowspan="2"></td>
 				</tr>
 				<tr>
-					<td><p>提交时间：</p></td>		<!-- 提交时间 -->
-					<td><p>稿件号：</p></td>		<!-- 稿件号 -->
+					<td width="180px"><p id="subDate">提交时间：</p></td>		<!-- 提交时间 -->
+					<td width="240px"><p id="bidNum">稿件号：</p></td>		<!-- 稿件号 -->
 				</tr>
 			</table>
 			<hr>
 		</section>
-		<button class="" onclick="javascript:void()">点击查看更多</button>
+		<button class="btn-load" onclick="loadBids()">点击查看更多</button>
 	</article>
 
 	<!-- footer -->
