@@ -1,0 +1,115 @@
+@charset "UTF-8";
+body, #top, .login_bg, #login, #login h2, #login a, .text, #h_6, #user, #pass, .submit, #getm {
+  margin: 0;
+  padding: 0; }
+
+body {
+  background: url(../../img/page/login_bg.jpg) no-repeat;
+  width: 100%; }
+
+#top {
+  width: 100%;
+  height: 500px; }
+
+.login_bg {
+  height: 500px;
+  width: 520px;
+  background-color: #000;
+  float: right;
+  filter: alpha(opacity=50);
+  opacity: 0.5; }
+
+#login {
+  width: 280px;
+  height: 250px;
+  position: relative;
+  top: 125px;
+  left: 960px;
+  background-color: #f8f8f8;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px; }
+
+#login h2 {
+  left: 32px; }
+
+#login h2 {
+  width: 100px;
+  height: 24px;
+  position: relative;
+  font-size: 20px;
+  letter-spacing: 4px;
+  top: 20px;
+  color: #52bac7;
+  cursor: default; }
+
+#login a {
+  position: relative;
+  font-size: 1px;
+  font-weight: none;
+  top: 8px;
+  text-decoration: none;
+  left: 205px;
+  color: #999; }
+
+#user, #pass, .submit, #getm {
+  margin-left: 32px; }
+
+.text {
+  clear: both;
+  width: 195px;
+  height: 32px;
+  font-size: 14px;
+  border: solid 1px #dedfe3;
+  padding-left: 5px;
+  color: #999;
+  outline: none; }
+
+#h_6 {
+  margin-top: 8px;
+  color: #000;
+  font-family: "微软雅黑";
+  font-size: 1px; }
+
+#user {
+  margin-top: 14px; }
+
+#pass {
+  margin-top: 16px;
+  position: relative; }
+
+#pass a {
+  position: absolute;
+  left: 140px;
+  top: 10px;
+  font-size: 2px;
+  display: block;
+  width: 120px;
+  height: 20px;
+  color: #999;
+  text-decoration: underline; }
+
+.submit {
+  width: 200px;
+  height: 36px;
+  margin-top: 22px;
+  background: url(../../img/page/login1.png) no-repeat;
+  border: none;
+  outline: none; }
+
+#getm {
+  margin-top: 8px; }
+
+.a {
+  font-size: 10px;
+  color: #52bac7; }
+
+.b {
+  font-size: 10px;
+  color: red; }
+
+.c {
+  font-size: 10px;
+  color: #52bac7; }
+
+/*# sourceMappingURL=../maps/page/login.css.map */

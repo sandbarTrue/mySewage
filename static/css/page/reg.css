@@ -1,0 +1,169 @@
+@charset "UTF-8";
+body, img, #check, .line, #l1, #l2, #custome, #serve, #reg, #reg dl, .label, .word, #reg dl dd, #reg dl dd input {
+  margin: 0px;
+  padding: 0px; }
+  body .label, img .label, #check .label, .line .label, #l1 .label, #l2 .label, #custome .label, #serve .label, #reg .label, #reg dl .label, .label .label, .word .label, #reg dl dd .label, #reg dl dd input .label, body #reg dl dd input, #reg dl dd body input, img #reg dl dd input, #reg dl dd img input, #check #reg dl dd input, #reg dl dd #check input, .line #reg dl dd input, #reg dl dd .line input, #l1 #reg dl dd input, #reg dl dd #l1 input, #l2 #reg dl dd input, #reg dl dd #l2 input, #custome #reg dl dd input, #reg dl dd #custome input, #serve #reg dl dd input, #reg dl dd #serve input, #reg dl dd input, #reg dl dd input, .label #reg dl dd input, #reg dl dd .label input, .word #reg dl dd input, #reg dl dd .word input, #reg dl dd input, #reg dl dd input input, body .info, img .info, #check .info, .line .info, #l1 .info, #l2 .info, #custome .info, #serve .info, #reg .info, #reg dl .info, .label .info, .word .info, #reg dl dd .info, #reg dl dd input .info, body .info1, img .info1, #check .info1, .line .info1, #l1 .info1, #l2 .info1, #custome .info1, #serve .info1, #reg .info1, #reg dl .info1, .label .info1, .word .info1, #reg dl dd .info1, #reg dl dd input .info1, body .info2, img .info2, #check .info2, .line .info2, #l1 .info2, #l2 .info2, #custome .info2, #serve .info2, #reg .info2, #reg dl .info2, .label .info2, .word .info2, #reg dl dd .info2, #reg dl dd input .info2, body .info3, img .info3, #check .info3, .line .info3, #l1 .info3, #l2 .info3, #custome .info3, #serve .info3, #reg .info3, #reg dl .info3, .label .info3, .word .info3, #reg dl dd .info3, #reg dl dd input .info3, body .info4, img .info4, #check .info4, .line .info4, #l1 .info4, #l2 .info4, #custome .info4, #serve .info4, #reg .info4, #reg dl .info4, .label .info4, .word .info4, #reg dl dd .info4, #reg dl dd input .info4, body .info5, img .info5, #check .info5, .line .info5, #l1 .info5, #l2 .info5, #custome .info5, #serve .info5, #reg .info5, #reg dl .info5, .label .info5, .word .info5, #reg dl dd .info5, #reg dl dd input .info5, body .info6, img .info6, #check .info6, .line .info6, #l1 .info6, #l2 .info6, #custome .info6, #serve .info6, #reg .info6, #reg dl .info6, .label .info6, .word .info6, #reg dl dd .info6, #reg dl dd input .info6, body .info7, img .info7, #check .info7, .line .info7, #l1 .info7, #l2 .info7, #custome .info7, #serve .info7, #reg .info7, #reg dl .info7, .label .info7, .word .info7, #reg dl dd .info7, #reg dl dd input .info7, body .info8, img .info8, #check .info8, .line .info8, #l1 .info8, #l2 .info8, #custome .info8, #serve .info8, #reg .info8, #reg dl .info8, .label .info8, .word .info8, #reg dl dd .info8, #reg dl dd input .info8, body .error, img .error, #check .error, .line .error, #l1 .error, #l2 .error, #custome .error, #serve .error, #reg .error, #reg dl .error, .label .error, .word .error, #reg dl dd .error, #reg dl dd input .error, body .error1, img .error1, #check .error1, .line .error1, #l1 .error1, #l2 .error1, #custome .error1, #serve .error1, #reg .error1, #reg dl .error1, .label .error1, .word .error1, #reg dl dd .error1, #reg dl dd input .error1, body .error2, img .error2, #check .error2, .line .error2, #l1 .error2, #l2 .error2, #custome .error2, #serve .error2, #reg .error2, #reg dl .error2, .label .error2, .word .error2, #reg dl dd .error2, #reg dl dd input .error2, body .error3, img .error3, #check .error3, .line .error3, #l1 .error3, #l2 .error3, #custome .error3, #serve .error3, #reg .error3, #reg dl .error3, .label .error3, .word .error3, #reg dl dd .error3, #reg dl dd input .error3, body .error4, img .error4, #check .error4, .line .error4, #l1 .error4, #l2 .error4, #custome .error4, #serve .error4, #reg .error4, #reg dl .error4, .label .error4, .word .error4, #reg dl dd .error4, #reg dl dd input .error4, body .error5, img .error5, #check .error5, .line .error5, #l1 .error5, #l2 .error5, #custome .error5, #serve .error5, #reg .error5, #reg dl .error5, .label .error5, .word .error5, #reg dl dd .error5, #reg dl dd input .error5, body .error6, img .error6, #check .error6, .line .error6, #l1 .error6, #l2 .error6, #custome .error6, #serve .error6, #reg .error6, #reg dl .error6, .label .error6, .word .error6, #reg dl dd .error6, #reg dl dd input .error6, body .error7, img .error7, #check .error7, .line .error7, #l1 .error7, #l2 .error7, #custome .error7, #serve .error7, #reg .error7, #reg dl .error7, .label .error7, .word .error7, #reg dl dd .error7, #reg dl dd input .error7, body .succ, img .succ, #check .succ, .line .succ, #l1 .succ, #l2 .succ, #custome .succ, #serve .succ, #reg .succ, #reg dl .succ, .label .succ, .word .succ, #reg dl dd .succ, #reg dl dd input .succ, body .succ1, img .succ1, #check .succ1, .line .succ1, #l1 .succ1, #l2 .succ1, #custome .succ1, #serve .succ1, #reg .succ1, #reg dl .succ1, .label .succ1, .word .succ1, #reg dl dd .succ1, #reg dl dd input .succ1, body .succ3, img .succ3, #check .succ3, .line .succ3, #l1 .succ3, #l2 .succ3, #custome .succ3, #serve .succ3, #reg .succ3, #reg dl .succ3, .label .succ3, .word .succ3, #reg dl dd .succ3, #reg dl dd input .succ3, body .succ4, img .succ4, #check .succ4, .line .succ4, #l1 .succ4, #l2 .succ4, #custome .succ4, #serve .succ4, #reg .succ4, #reg dl .succ4, .label .succ4, .word .succ4, #reg dl dd .succ4, #reg dl dd input .succ4, body .succ5, img .succ5, #check .succ5, .line .succ5, #l1 .succ5, #l2 .succ5, #custome .succ5, #serve .succ5, #reg .succ5, #reg dl .succ5, .label .succ5, .word .succ5, #reg dl dd .succ5, #reg dl dd input .succ5, body .succ6, img .succ6, #check .succ6, .line .succ6, #l1 .succ6, #l2 .succ6, #custome .succ6, #serve .succ6, #reg .succ6, #reg dl .succ6, .label .succ6, .word .succ6, #reg dl dd .succ6, #reg dl dd input .succ6 {
+    font-weight: normal !important; }
+
+/*全局*/
+body {
+  height: 1500px;
+  width: 100%;
+  margin: auto;
+  background-color: #f4f4f4; }
+
+/*选择注册身份区域*/
+#check {
+  width: 1092px;
+  height: 188px;
+  margin: 0 auto;
+  text-align: center; }
+
+.line {
+  display: inline;
+  height: 1px; }
+
+#l1 {
+  display: inlinje;
+  height: 1px; }
+
+#l2 {
+  display: inline;
+  height: 1px; }
+
+#custome {
+  float: left;
+  padding: 60px 120px 60px 290px; }
+
+#serve {
+  float: left;
+  padding: 60px 0; }
+
+#a {
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px; }
+
+#b {
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px; }
+
+/*注册区*/
+#reg {
+  width: 570px;
+  height: 838px;
+  margin: auto; }
+
+#reg dl {
+  margin: 120px 90px 100px 0px; }
+
+.label {
+  font-size: 12px;
+  font-family: "微软雅黑";
+  color: #666; }
+
+.word {
+  font-size: 16px;
+  font-weight: bold;
+  letter-spacing: 1px; }
+
+#reg dl dd {
+  color: #7b7b7b;
+  text-align: right;
+  height: 70px;
+  line-height: 33px;
+  padding: 15px 0; }
+
+#reg dl dd input {
+  font-size: 14px;
+  width: 320px;
+  height: 35px;
+  padding: 0 0 0 2px;
+  border: 1px solid #e3e3e3;
+  margin-left: 15px;
+  outline: none;
+  resize: none;
+  color: #666;
+  background-color: #f4f4f4;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px; }
+
+#reg dl dd input.submit {
+  height: 60px;
+  border: none;
+  width: 200px;
+  background: url(../../img/page/finish.png) no-repeat; }
+
+/*注册提示语*/
+.info, .info1, .info2, .info3, .info4, .info5, .info6, .info7, .info8, .error, .error1, .error2, .error3, .error4, .error5, .error6, .error7, .succ, .succ1, .succ3, .succ4, .succ5, .succ6 {
+  font-size: 12px;
+  height: 35px;
+  line-height: 35px;
+  letter-spacing: 1px;
+  padding: 0 0 0 15px;
+  position: absolute; }
+
+/*提示注册文本格式*/
+.info, .info1, .info2, .info3, .info4, .info5, .info6, .info7, .info8 {
+  color: #7b7b7b !important;
+  display: none; }
+
+/*提示出错*/
+.error {
+  color: red !important;
+  display: none; }
+
+.error1 {
+  color: red !important;
+  display: none; }
+
+.error2 {
+  color: red !important;
+  display: none; }
+
+.error3 {
+  color: red !important;
+  display: none; }
+
+.error4 {
+  color: red !important;
+  display: none; }
+
+.error5 {
+  color: red !important;
+  display: none; }
+
+.error6 {
+  color: red !important;
+  display: none; }
+
+.error7 {
+  color: red !important;
+  display: none; }
+
+/*提示输入正确*/
+.succ {
+  color: green !important;
+  display: none; }
+
+.succ1 {
+  color: green !important;
+  display: none; }
+
+.succ3 {
+  color: green !important;
+  display: none; }
+
+.succ4 {
+  color: green !important;
+  display: none; }
+
+.succ5 {
+  color: green !important;
+  display: none; }
+
+.succ6 {
+  color: green !important;
+  display: none; }
+
+/*# sourceMappingURL=../maps/page/reg.css.map */

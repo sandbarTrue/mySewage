@@ -1,0 +1,145 @@
+%px{
+	margin:0;
+	padding:0;
+}
+
+body{
+	@extend %px;
+	background:url(../../img/page/login_bg.jpg) no-repeat;
+	width:100%;
+}
+
+#top{
+    @extend %px;
+	width:100%;
+	height:500px;
+	
+
+}
+
+.login_bg{
+    @extend %px;
+	height:500px;
+	width:520px;
+	background-color:#000;
+	float:right;
+	filter:alpha(opacity=50);
+	opacity:0.5;
+}
+
+#login{
+	@extend %px;
+	width:280px;
+	height:250px;
+	position:relative;
+	top:125px;
+	left:960px;
+	background-color:#f8f8f8;
+	-moz-border-radius:3px;
+	-webkit-border-radius:3px;
+	border-radius:3px;
+}
+%x{
+	left:32px;
+}
+#login h2{
+	@extend %px;
+	width:100px;
+	height:24px;
+	position:relative;
+	font-size:20px;
+	letter-spacing:4px;
+	top:20px;
+	@extend %x;
+	color:#52bac7;
+	cursor:default;
+}
+
+#login a{
+	@extend %px;
+	position:relative;
+	font-size:1px;
+	font-weight:none;
+    top:8px;
+    text-decoration:none;
+    left:205px;
+    color:#999;
+}
+%x1{
+	margin-left:32px;
+}
+.text{
+    clear:both;
+	@extend %px;
+	width:195px;
+	height:32px;
+	font-size:14px;
+	border:solid 1px #dedfe3;
+	padding-left:5px;
+	color:#999;
+	outline:none;	
+}
+
+#h_6{
+    @extend %px;
+	margin-top:8px;
+	color:#000;
+	font-family:"微软雅黑";
+	font-size:1px;
+}
+#user{
+      @extend %px;
+	  margin-top:14px;
+	  @extend %x1;
+	  
+}
+#pass{
+	 @extend %px;
+	  margin-top:16px;
+	  @extend %x1;
+	  position:relative;
+}
+
+
+#pass a{
+	position:absolute;
+	left:140px;
+	top:10px;
+	font-size:2px;
+	display:block;
+	width:120px;
+	height:20px;
+	color:#999;
+	text-decoration:underline
+
+	
+}
+
+.submit{
+	@extend %px;
+	width:200px;
+	height:36px;
+	margin-top:22px;
+	@extend %x1;
+	background:url(../../img/page/login1.png) no-repeat;
+    border:none;
+    outline:none;
+}
+#getm{
+    @extend %px;
+	@extend %x1;
+	margin-top:8px;
+	
+}
+.a{
+	font-size:10px;
+	color:#52bac7;
+}
+.b{
+	font-size:10px;
+	color:red;
+}
+.c{
+	font-size:10px;
+	color:#52bac7;
+}

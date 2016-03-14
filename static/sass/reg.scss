@@ -1,0 +1,300 @@
+%px{
+	margin:0px;
+	padding:0px;
+	
+
+%px1{
+	margin:0 auto;
+}
+%px2{
+	font-weight:normal!important;
+}
+}
+/*全局*/
+body{
+	@extend %px;
+	height:1500px;
+	width:100%;
+	margin:auto;
+	background-color:#f4f4f4;
+
+}
+
+img{
+	@extend %px;
+}
+
+
+/*选择注册身份区域*/
+#check{
+    @extend %px;
+    width:1092px;
+    height:188px;
+    margin:0 auto;
+	text-align:center;
+	
+}
+
+.line{
+    @extend %px;
+	display:inline;
+	height:1px;
+}
+
+#l1{
+    @extend %px;
+	display:inlinje;
+	height:1px;
+}
+
+#l2{
+    display:inline;
+    @extend %px;
+    height:1px;
+	
+}
+
+
+#custome{
+    @extend %px;
+	float:left;
+	padding:60px 120px 60px 290px;
+	
+}
+#serve{
+	@extend %px;
+	float:left;
+	padding:60px 0;
+	
+}
+
+#a{
+	-moz-border-radius: 5px;      
+    -webkit-border-radius: 5px;  
+}
+
+#b{
+	-moz-border-radius: 5px;      
+    -webkit-border-radius: 5px;  
+}
+/*注册区*/
+
+#reg{
+	@extend %px;
+	width:570px;
+	height:838px;
+	margin:auto;
+   
+}
+#reg dl{
+   @extend %px;
+   margin:120px 90px 100px 0px;
+  
+}
+
+.label{
+	@extend %px;
+	@extend %px2;
+	font-size:12px;
+    font-family:"微软雅黑";
+    color:#666;
+
+}
+.word{
+	@extend %px;
+	font-size:16px;	
+	font-weight:bold;
+	letter-spacing:1px;
+}
+#reg dl dd{
+    @extend %px;
+    color:#7b7b7b;
+	text-align:right;
+	height:70px;
+	line-height:33px;
+	padding:15px 0;
+   
+}
+#reg dl dd input{
+    @extend %px;
+    @extend %px2;
+	font-size:14px;
+	width:320px;
+	height:35px;
+	padding:0 0 0 2px;
+	border:1px solid #e3e3e3;
+	margin-left:15px;
+	outline: none;
+    resize:none; 
+    color:#666;
+	background-color:#f4f4f4;
+	-moz-border-radius: 3px;      
+    -webkit-border-radius: 3px;  
+    border-radius:3px;    
+
+}
+#reg dl dd input.submit{
+	height:60px;
+	border:none;
+	width:200px;
+	background:url(../../img/page/finish.png) no-repeat;
+}
+/*注册提示语*/
+%alert{
+	font-size:12px;
+	height:35px;
+	line-height:35px;
+	letter-spacing:1px;
+	padding:0 0 0 15px;
+    position:absolute;	
+    @extend %bold;
+}
+
+/*提示注册文本格式*/
+.info{
+	@extend %alert;
+	color:#7b7b7b !important;
+	display:none;
+    @extend %px2;
+}
+.info1{
+	@extend .info;
+	@extend %px2;
+}
+
+.info2{
+	@extend .info;
+	@extend %px2;
+}
+
+.info3{
+	@extend .info;
+	@extend %px2;
+}
+
+.info4{
+	@extend .info;
+	 @extend %px2;
+}
+
+.info5{
+	@extend .info;
+	 @extend %px2;
+}
+
+.info6{
+	@extend .info;
+	 @extend %px2;
+}
+
+.info7{
+	@extend .info;
+	 @extend %px2;
+}
+
+.info8{
+	@extend .info;
+	 @extend %px2;
+}
+/*提示出错*/
+.error{
+	@extend %alert;
+	color:red !important;
+	display:none;
+	 @extend %px2;
+}
+
+.error1{
+	@extend %alert;
+	color:red !important;
+	display:none;
+	 @extend %px2;
+}
+
+.error2{
+	@extend %alert;
+	color:red !important;
+	display:none;
+	 @extend %px2;
+}
+.error3{
+	@extend %alert;
+	color:red !important;
+	display:none;
+	 @extend %px2;
+}
+
+.error4{
+	@extend %alert;
+	color:red !important;
+	display:none;
+	 @extend %px2;
+}
+
+.error5{
+	@extend %alert;
+	color:red !important;
+	display:none;
+	 @extend %px2;
+}
+
+.error6{
+	@extend %alert;
+	color:red !important;
+	display:none;
+	 @extend %px2;
+}
+
+.error7{
+	@extend %alert;
+	color:red !important;
+	display:none;
+	 @extend %px2;
+}
+
+/*提示输入正确*/
+.succ{
+	@extend %alert;
+	color:green !important;
+	display:none;
+	 @extend %px2;
+}
+
+.succ1{
+	@extend %alert;
+	color:green !important;
+	display:none;
+	 @extend %px2;
+}
+
+.succ3{
+	@extend %alert;
+	color:green !important;
+	display:none;
+	 @extend %px2;
+}
+
+.succ4{
+	@extend %alert;
+	color:green !important;
+	display:none;
+	 @extend %px2;
+}
+
+.succ5{
+	@extend %alert;
+	color:green !important;
+	display:none;
+	 @extend %px2;
+}
+
+.succ6{
+	@extend %alert;
+	color:green !important;
+	display:none;
+	 @extend %px2;
+}
+
+
+
+
