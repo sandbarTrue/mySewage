@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/sewage/!svn/ver/41/sewage/src/config
+END
+spring-myBatis.xml
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/sewage/!svn/ver/41/sewage/src/config/spring-myBatis.xml
+END
+log4j.properties
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/sewage/!svn/ver/2/sewage/src/config/log4j.properties
+END
+springMVC-config.xml
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/sewage/!svn/ver/29/sewage/src/config/springMVC-config.xml
+END
+template_for_copy.xml
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/sewage/!svn/ver/2/sewage/src/config/template_for_copy.xml
+END

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.cqupt.project.manager.EngineeringMapper" >
+  <resultMap id="BaseResultMap" type="com.cqupt.project.model.Engineering" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="title" property="title" jdbcType="VARCHAR" />
+    <result column="cont" property="cont" jdbcType="VARCHAR" />
+    <result column="brief" property="brief" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, title, cont, brief
+  </sql>
+  <select id="findAll" resultMap="BaseResultMap" >
+  select  
+   <include refid="Base_Column_List" />
+    from engineering
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from engineering
+    where id= #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from engineering
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.cqupt.project.model.Engineering" >
+    insert into engineering (id, title, cont,brief)
+    values (#{id,jdbcType=INTEGER}, #{title,jdbcType=CHAR}, #{cont,jdbcType=VARCHAR}, 
+      #{brief,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.cqupt.project.model.Engineering" >
+    insert into engineering
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="title != null" >
+        title,
+      </if>
+      <if test="cont != null" >
+        cont,
+      </if>
+      <if test="brief != null" >
+        brief,
+      </if>
+      
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{newsId,jdbcType=INTEGER},
+      </if>
+      <if test="title != null" >
+        #{title,jdbcType=CHAR},
+      </if>
+      <if test="cont != null" >
+        #{cont,jdbcType=VARCHAR},
+      </if>
+      <if test="brief != null" >
+        #{brief,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+</mapper>

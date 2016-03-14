@@ -1,0 +1,247 @@
+package com.cqupt.project.controller;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+import java.util.UUID;
+
+import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.apache.commons.fileupload.FileItem;
+import org.apache.commons.fileupload.disk.DiskFileItemFactory;
+import org.apache.commons.fileupload.servlet.ServletFileUpload;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.cqupt.project.model.Attachment;
+import com.cqupt.project.model.Bid;
+import com.cqupt.project.model.Project;
+import com.cqupt.project.model.ReturnStatus;
+import com.cqupt.project.service.AttachmentService;
+import com.cqupt.project.service.BidService;
+import com.cqupt.project.service.ProjectService;
+import com.cqupt.project.utils.JSONUtils;
+
+@Controller("projectController")
+@RequestMapping("/project")
+public class projectController {
+
+	@Resource
+	private ProjectService projectService;
+	
+	@Resource
+	private BidService  bidService;
+	
+	@Resource
+	private AttachmentService attachmentService;
+	
+	@RequestMapping("/addProject")
+	public void insert(HttpServletRequest request, HttpServletResponse response) {
+		
+		/*Map<String,Object> map  = new HashMap<String,Object>();
+		Map<String, Object> formFields = new HashMap<String, Object>();
+		Attachment attachment = null;
+		Project project;
+		String userId = (String) request.getAttribute("userId");
+		
+		boolean isMultipart = ServletFileUpload.isMultipartContent(request);  
+		if (isMultipart) {
+			try {
+				DiskFileItemFactory factory = new DiskFileItemFactory();  
+				  
+				// 当上传文件太大时，因为虚拟机能使用的内存是有限的，所以此时要通过临时文件来实现上传文件的保存   
+				// 此方法是设置是否使用临时文件的临界值（单位：字节）   
+				factory.setSizeThreshold(1024*1024*20);  
+				  
+				// 与上一个结合使用，设置临时文件的路径（绝对路径）   
+				factory.setRepository(new File("E:/sewage/temp/"));  
+				  
+				// Create a new file upload handler   
+				ServletFileUpload upload = new ServletFileUpload(factory);  
+				// 设置上传内容的大小限制（单位：字节）   
+				upload.setSizeMax(1024*1024*200);  
+				  
+				// Parse the request   
+				List<?> items = upload.parseRequest(request);  
+				Iterator<?> iter = items.iterator();  
+				int i;
+				while (iter.hasNext()) {  
+				  FileItem item = (FileItem) iter.next();  
+			 
+				  if (item.isFormField()) {  
+				        //如果是普通表单字段   
+					  String name = item.getFieldName();  
+				      String value = item.getString();  
+				      formFields.put(name, value);
+				   } else {
+				       //如果是文件字段   
+					   String fieldName = item.getFieldName();  
+					   String fileName = item.getName();  
+				       // Process a file upload   
+					   if (fileName != null) {
+						   String s = UUID.randomUUID().toString(); 
+						   String url = "E:/sewage/project/" + userId + "/" + s + fileName;
+						   File uploadFile = new File(url);
+						   if (!uploadFile.exists()) {
+							   // 将数据插入数据库
+							   	String fileId = s + new Date().toString();
+							   	Date timeFileUpload = new Date();
+							   	String filePath = url;
+							   	String uploadFileName = (String) formFields.get("uploadFileName");
+							   	String uploadRealName = item.getName();
+							   	attachment = new Attachment(fileId, timeFileUpload, filePath, uploadFileName, uploadRealName);
+				       			i = attachmentService.addAttachment(attachment);
+							   //插入成功，将文件内容保存在uploadFile文件中
+								if (i > 0) {
+					        		   item.write(uploadFile);
+								}
+					   }
+					   else {
+						   map.put("1", "1");
+						   map.put("status",ReturnStatus.ERROR);
+						   map.put("Error_Massage","500");
+					   }
+				       } else {
+				    	   InputStream uploadedStream = item.getInputStream();  
+			               uploadedStream.close(); 
+			               map.put("1", "1");
+			               map.put("status",ReturnStatus.ERROR);
+			               map.put("Error_Massage","500");
+			           }  
+				    } 
+				}
+				if (map.get("1") == null) {
+					project = new Project();
+					project.setBidDeadline((Date)formFields.get("bidDeadline"));
+					project.setBriefIntro((String)formFields.get("briefIntro"));
+					project.setCompanyId((Integer)request.getAttribute("companyId"));
+					project.setFileId(attachment.getFileId());
+					project.setProBudget((Long)formFields.get("proBudget"));
+					project.setProDeadline((Date)formFields.get("proDeadline"));
+					project.setProDetail((String)formFields.get("proDetail"));
+					project.setProName((String)formFields.get("proName"));
+					project.setProPhoneNum((Integer)formFields.get("proPhoneNum"));
+					project.setStatus("0");
+					if(projectService.addProject(project) == 1){
+			    		map.put("status", ReturnStatus.SUCCSS);
+						map.put("0", "0");
+			        }
+			    	else{
+				    	map.put("status",ReturnStatus.ERROR);
+				    	map.put("1", "1");
+				    	map.put("Error_Massage","500");
+			       }
+				}
+		  } 
+		catch(Exception e){
+	         e.printStackTrace();
+	         map.put("1", "1");
+	         map.put("status",ReturnStatus.ERROR);
+	         map.put("Error_Massage","500");
+	      }
+		}else{
+			map.put("1", "1");
+			map.put("status",ReturnStatus.ERROR);
+			map.put("Error_Massage","500");
+		}
+		
+		JSONUtils.toJSON(map, response);*/
+	}
+	//需求页面,order排序的关键字,pageNow 当前页数,pageSize 每页个数,
+	@RequestMapping("/getProjects")
+	public void getProjects(String order, int pageNow, int pageSize, HttpServletRequest request, HttpServletResponse response) {
+		
+		Map <String, Object> map = new HashMap<String, Object>();
+		String projectId = (String) request.getAttribute("projectId");
+		ArrayList<Project> projects = projectService.loadAllProjects(order, pageNow, pageSize);
+		int bidNum = bidService.loadBidNum(projectId);
+		int totalPages = projectService.loadTotalpages(pageSize);
+		if(projects != null){
+    		map.put("status", ReturnStatus.SUCCSS);
+			map.put("0", "0");
+			map.put("bidNum", bidNum);
+			map.put("totalPages", totalPages);
+			map.put("projects", projects);
+        }
+    	else{
+	    	map.put("status",ReturnStatus.ERROR);
+	    	map.put("1", "1");
+	    	map.put("Error_Massage","500");
+       }
+	JSONUtils.toJSON(map, response);
+		
+	}
+	//首页的project 默认排序bidNum
+	@RequestMapping("getIndexProjects")
+	public void getIndexProject(int page, int pageSize, HttpServletRequest request, HttpServletResponse response) {
+		
+		Map <String, Object> map = new HashMap<String, Object>();
+		String projectId = (String) request.getAttribute("projectId");
+		List<Project> projects = projectService.loadAllProjects("bidNum", page, pageSize);
+		int bidNum = bidService.loadBidNum(projectId);
+		int totalPages = projectService.loadTotalpages(pageSize);
+		if(projects != null){
+    		map.put("status", ReturnStatus.SUCCSS);
+			map.put("0", "0");
+			map.put("bidNum", bidNum);
+			map.put("totalPages", totalPages);
+			map.put("projects", projects);
+        }
+    	else{
+	    	map.put("status",ReturnStatus.ERROR);
+	    	map.put("1", "1");
+	    	map.put("Error_Massage","500");
+    	}
+		JSONUtils.toJSON(map, response);
+
+	}
+	//广告
+	@RequestMapping("/getSomeProjects")
+	public void getSomeProjects(int num, HttpServletRequest request, HttpServletResponse response) {
+		Map <String, Object> map = new HashMap<String, Object>(); 
+		ArrayList<Project> projects = projectService.loadSomeProjects(num);
+		if(projects != null){
+    		map.put("status", ReturnStatus.SUCCSS);
+			map.put("0", "0");
+			map.put("projects", projects);
+        }
+    	else{
+	    	map.put("status",ReturnStatus.ERROR);
+	    	map.put("1", "1");
+	    	map.put("Error_Massage","500");
+       }
+		JSONUtils.toJSON(map, response);
+	}
+	//需求项目
+	@RequestMapping("/projectShow")
+	public void projectShow(HttpServletRequest request, HttpServletResponse response) {
+		Map <String, Object> map = new HashMap<String, Object>(); 
+		Integer projectId = (Integer) request.getAttribute("projectId");
+		Project project = projectService.loadByPrimaryKey(projectId);
+		ArrayList<Bid> bids = bidService.loadByProjectId(projectId);
+		if(project != null && bids != null){
+    		map.put("status", ReturnStatus.SUCCSS);
+			map.put("0", "0");
+			map.put("project", project);
+			map.put("bids", bids);
+        }
+    	else{
+	    	map.put("status",ReturnStatus.ERROR);
+	    	map.put("1", "1");
+	    	map.put("Error_Massage","500");
+       }
+		
+		JSONUtils.toJSON(map, response);
+	}
+}
+

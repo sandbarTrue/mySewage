@@ -1,0 +1,77 @@
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/sewage/!svn/ver/41/sewage/src/com/cqupt/project/model
+END
+Supervisor.java
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/sewage/!svn/ver/41/sewage/src/com/cqupt/project/model/Supervisor.java
+END
+ReturnStatus.java
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/sewage/!svn/ver/35/sewage/src/com/cqupt/project/model/ReturnStatus.java
+END
+Company.java
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/sewage/!svn/ver/40/sewage/src/com/cqupt/project/model/Company.java
+END
+Project.java
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/sewage/!svn/ver/34/sewage/src/com/cqupt/project/model/Project.java
+END
+Attachment.java
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/sewage/!svn/ver/25/sewage/src/com/cqupt/project/model/Attachment.java
+END
+Engineering.java
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/sewage/!svn/ver/42/sewage/src/com/cqupt/project/model/Engineering.java
+END
+Score.java
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/sewage/!svn/ver/3/sewage/src/com/cqupt/project/model/Score.java
+END
+News.java
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/sewage/!svn/ver/3/sewage/src/com/cqupt/project/model/News.java
+END
+Page.java
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/sewage/!svn/ver/24/sewage/src/com/cqupt/project/model/Page.java
+END
+Contract.java
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/sewage/!svn/ver/37/sewage/src/com/cqupt/project/model/Contract.java
+END
+Bid.java
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/sewage/!svn/ver/24/sewage/src/com/cqupt/project/model/Bid.java
+END
+User.java
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/sewage/!svn/ver/37/sewage/src/com/cqupt/project/model/User.java
+END

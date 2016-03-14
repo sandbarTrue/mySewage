@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.cqupt.project.manager.CompanyMapper" >
+  <resultMap id="BaseResultMap" type="com.cqupt.project.model.Company" >
+    <id column="companyId" property="companyId" jdbcType="INTEGER" />
+    <result column="companyName" property="companyName" jdbcType="CHAR" />
+    <result column="legalPer" property="legalPer" jdbcType="CHAR" />
+    <result column="idcardNum" property="idcardNum" jdbcType="CHAR" />
+    <result column="registNum" property="registNum" jdbcType="BIGINT" />
+    <result column="companyEmail" property="companyEmail" jdbcType="CHAR" />
+    <result column="phoneNum" property="phoneNum" jdbcType="BIGINT" />
+    <result column="companyAddr" property="companyAddr" jdbcType="CHAR" />
+    <result column="registDate" property="registDate" jdbcType="DATE" />
+    <result column="photo" property="photo" jdbcType="VARCHAR" />
+    <result column="companyType" property="companyType" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    companyId, companyName, legalPer, idcardNum, registNum, companyEmail, phoneNum, companyAddr, 
+    registDate, photo, companyType
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from company
+    where companyId = #{companyId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from company
+    where companyId = #{companyId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.cqupt.project.model.Company" >
+    insert into company (companyId, companyName, legalPer, 
+      idcardNum, registNum, companyEmail, 
+      phoneNum, companyAddr, registDate, 
+      photo, companyType)
+    values (#{companyId,jdbcType=INTEGER}, #{companyName,jdbcType=CHAR}, #{legalPer,jdbcType=CHAR}, 
+      #{idcardNum,jdbcType=CHAR}, #{registNum,jdbcType=BIGINT}, #{companyEmail,jdbcType=CHAR}, 
+      #{phoneNum,jdbcType=BIGINT}, #{companyAddr,jdbcType=CHAR}, #{registDate,jdbcType=DATE}, 
+      #{photo,jdbcType=VARCHAR}, #{companyType,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.cqupt.project.model.Company" >
+    insert into company
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="companyId != null" >
+        companyId,
+      </if>
+      <if test="companyName != null" >
+        companyName,
+      </if>
+      <if test="legalPer != null" >
+        legalPer,
+      </if>
+      <if test="idcardNum != null" >
+        idcardNum,
+      </if>
+      <if test="registNum != null" >
+        registNum,
+      </if>
+      <if test="companyEmail != null" >
+        companyEmail,
+      </if>
+      <if test="phoneNum != null" >
+        phoneNum,
+      </if>
+      <if test="companyAddr != null" >
+        companyAddr,
+      </if>
+      <if test="registDate != null" >
+        registDate,
+      </if>
+      <if test="photo != null" >
+        photo,
+      </if>
+      <if test="companyType != null" >
+        companyType,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="companyId != null" >
+        #{companyId,jdbcType=INTEGER},
+      </if>
+      <if test="companyName != null" >
+        #{companyName,jdbcType=CHAR},
+      </if>
+      <if test="legalPer != null" >
+        #{legalPer,jdbcType=CHAR},
+      </if>
+      <if test="idcardNum != null" >
+        #{idcardNum,jdbcType=CHAR},
+      </if>
+      <if test="registNum != null" >
+        #{registNum,jdbcType=BIGINT},
+      </if>
+      <if test="companyEmail != null" >
+        #{companyEmail,jdbcType=CHAR},
+      </if>
+      <if test="phoneNum != null" >
+        #{phoneNum,jdbcType=BIGINT},
+      </if>
+      <if test="companyAddr != null" >
+        #{companyAddr,jdbcType=CHAR},
+      </if>
+      <if test="registDate != null" >
+        #{registDate,jdbcType=DATE},
+      </if>
+      <if test="photo != null" >
+        #{photo,jdbcType=VARCHAR},
+      </if>
+      <if test="companyType != null" >
+        #{companyType,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.cqupt.project.model.Company" >
+    update company
+    <set >
+      <if test="companyName != null" >
+        companyName = #{companyName,jdbcType=CHAR},
+      </if>
+      <if test="legalPer != null" >
+        legalPer = #{legalPer,jdbcType=CHAR},
+      </if>
+      <if test="idcardNum != null" >
+        idcardNum = #{idcardNum,jdbcType=CHAR},
+      </if>
+      <if test="registNum != null" >
+        registNum = #{registNum,jdbcType=BIGINT},
+      </if>
+      <if test="companyEmail != null" >
+        companyEmail = #{companyEmail,jdbcType=CHAR},
+      </if>
+      <if test="phoneNum != null" >
+        phoneNum = #{phoneNum,jdbcType=BIGINT},
+      </if>
+      <if test="companyAddr != null" >
+        companyAddr = #{companyAddr,jdbcType=CHAR},
+      </if>
+      <if test="registDate != null" >
+        registDate = #{registDate,jdbcType=DATE},
+      </if>
+      <if test="photo != null" >
+        photo = #{photo,jdbcType=VARCHAR},
+      </if>
+      <if test="companyType != null" >
+        companyType = #{companyType,jdbcType=INTEGER},
+      </if>
+    </set>
+    where companyId = #{companyId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.cqupt.project.model.Company" >
+    update company
+    set companyName = #{companyName,jdbcType=CHAR},
+      legalPer = #{legalPer,jdbcType=CHAR},
+      idcardNum = #{idcardNum,jdbcType=CHAR},
+      registNum = #{registNum,jdbcType=BIGINT},
+      companyEmail = #{companyEmail,jdbcType=CHAR},
+      phoneNum = #{phoneNum,jdbcType=BIGINT},
+      companyAddr = #{companyAddr,jdbcType=CHAR},
+      registDate = #{registDate,jdbcType=DATE},
+      photo = #{photo,jdbcType=VARCHAR},
+      companyType = #{companyType,jdbcType=INTEGER}
+    where companyId = #{companyId,jdbcType=INTEGER}
+  </update>
+  
+  <!-- 杨青 -->
+  <select id="selectByCompanyId" resultMap="BaseResultMap" parameterType="java.lang.Integer"> 
+  	select
+  	<include refid="Base_Column_List"/>
+  	from company
+  	where companyId = #{companyId,jdbcType=INTEGER}
+  </select>
+  <select id="selectSomeCompanies" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+  	select
+  	<include refid="Base_Column_List"/>
+  	from company
+  	limit #{num}
+  </select>
+  <select id="selectAllCompanies" parameterType="java.util.Map" resultMap="BaseResultMap">
+  	select 
+  	<include refid="Base_Column_List"/>
+  	from company
+  	where from companyId = #{companyId,jdbcType=INTEGER}
+  </select>
+  <select id="selectTotalNum" parameterType="java.lang.Integer" resultType="java.lang.Integer">
+  	select count(companyId)
+  	from company
+  </select>
+  <select id="getCompanyIdByregistNum" parameterType="java.lang.Long" resultType="java.lang.Integer">
+  	select companyId
+  	from company
+  	where registNum = #{companyName,jdbcType=CHAR}
+  </select>
+<<<<<<< .mine
+   <select id="selectByregistNum" parameterType="java.lang.Long" resultMap="BaseResultMap">
+  	select
+  	 <include refid="Base_Column_List"/>
+  	from company
+  	where registNum = #{companyName,jdbcType=CHAR}
+  </select>
+=======
+  <select id="getAllCompanies" resultMap="BaseResultMap">
+  	select
+  	<include refid="Base_Column_List"/>
+  	from company
+  </select>
+>>>>>>> .r41
+</mapper>

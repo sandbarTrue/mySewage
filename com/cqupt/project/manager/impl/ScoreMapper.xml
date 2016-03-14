@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.cqupt.project.manager.ScoreMapper" >
+  <resultMap id="BaseResultMap" type="com.cqupt.project.model.Score" >
+    <result column="score" property="score" jdbcType="DOUBLE" />
+    <result column="proId" property="proId" jdbcType="INTEGER" />
+  </resultMap>
+  <insert id="insert" parameterType="com.cqupt.project.model.Score" >
+    insert into score (score, proId)
+    values (#{score,jdbcType=DOUBLE}, #{proId,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.cqupt.project.model.Score" >
+    insert into score
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="score != null" >
+        score,
+      </if>
+      <if test="proId != null" >
+        proId,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="score != null" >
+        #{score,jdbcType=DOUBLE},
+      </if>
+      <if test="proId != null" >
+        #{proId,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <!-- 杨青 -->
+  <select id="getProjectScore" parameterType="java.lang.Integer" resultType="java.lang.Double">
+  	select IFNULL(MAX(score),0)
+  	from score
+  	where proId = #{proId,jdbcType=INTEGER}
+  </select>
+</mapper>

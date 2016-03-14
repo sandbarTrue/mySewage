@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.cqupt.project.manager.BidMapper" >
+  <resultMap id="BaseResultMap" type="com.cqupt.project.model.Bid" >
+    <id column="bidId" property="bidId" jdbcType="INTEGER" />
+    <result column="proId" property="proId" jdbcType="INTEGER" />
+    <result column="bidDetail" property="bidDetail" jdbcType="VARCHAR" />
+    <result column="submitDate" property="submitDate" jdbcType="TIMESTAMP" />
+    <result column="companyId" property="companyId" jdbcType="INTEGER" />
+    <result column="fileId" property="fileId" jdbcType="VARCHAR" />
+    <association property="company" column="companyId"
+      javaType="com.cqupt.project.model.Company" 
+      select="com.cqupt.project.manager.CompanyMapper.selectByPrimaryKey" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    bidId, proId, bidDetail, submitDate, companyId, fileId
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" >
+    select 
+    <include refid="Base_Column_List" />
+    from bid
+    where bidId = #{bidId,jdbcType=INTEGER}
+  </select>
+  <select id="selectBidNum" resultType="java.lang.Integer" >
+    select count(bidId) as bidNum
+    from bid
+    where bid.proId = #{proId,jdbcType=INTEGER}
+    group by bid.proId 
+  </select>
+   <select id="selectByProjectId" resultMap="BaseResultMap" >
+    select 
+    <include refid="Base_Column_List" />
+    from bid
+    where bid.proId =  #{proId,jdbcType=INTEGER}
+  </select>
+   <select id="selectByCompanyId" resultMap="BaseResultMap" >
+    select 
+    <include refid="Base_Column_List" />
+    from bid
+    where bid.companyId = #{companyId,jdbcType=INTEGER}
+  </select>
+  <select id="selectByProId" resultMap="BaseResultMap" parameterType="java.util.Map">
+    select 
+    <include refid="Base_Column_List" />
+    from bid
+    where bid.proId =#{proId,jdbcType=INTEGER} limit #{pageNow} ,#{pageSize}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from bid
+    where bidId = #{bidId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.cqupt.project.model.Bid" >
+    insert into bid (bidId, proId, bidDetail, 
+      submitDate, companyId, fileId
+      )
+    values (#{bidId,jdbcType=INTEGER}, #{proId,jdbcType=INTEGER}, #{bidDetail,jdbcType=VARCHAR}, 
+      #{submitDate,jdbcType=TIMESTAMP}, #{companyId,jdbcType=INTEGER}, #{fileId,jdbcType=VARCHAR}
+      )
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.cqupt.project.model.Bid" >
+    update bid
+    set proId = #{proId,jdbcType=INTEGER},
+      bidDetail = #{bidDetail,jdbcType=VARCHAR},
+      submitDate = #{submitDate,jdbcType=TIMESTAMP},
+      companyId = #{companyId,jdbcType=INTEGER},
+      fileId = #{fileId,jdbcType=VARCHAR}
+    where bidId = #{bidId,jdbcType=INTEGER}
+  </update>
+  
+  <update id="updateBidDetail" parameterType="java.util.Map" >
+    update bid
+    set bidDetail= #{bidDetail,jdbcType=VARCHAR}
+    where bidId = #{bidId,jdbcType=INTEGER}
+  </update>
+  <update id="updateFile" parameterType="com.cqupt.project.model.Bid" >
+    update bid
+    set =  fileId = #{fileId,jdbcType=VARCHAR}
+    where bidId = #{bidId,jdbcType=INTEGER}
+  </update>
+</mapper>

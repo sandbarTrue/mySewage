@@ -1,0 +1,36 @@
+<!-- <?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.cqupt........................." >
+  <resultMap id="BaseResultMap" type="" >
+    
+  </resultMap>
+  
+  <sql id="Base_Column_List" >
+    
+  </sql>
+  
+  
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="" >
+   
+  </select>
+  
+  <select id="findAll" resultMap="">
+ 
+  </select>
+  
+  
+  
+  <delete id="deleteByPrimaryKey" parameterType="" >
+    
+  </delete>
+  
+  
+  <insert id="add" parameterType="" >
+   
+  </insert>
+  
+  
+  <update id="modifyByPrimaryKey" parameterType="" >
+    
+  </update>
+</mapper> -->

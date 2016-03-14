@@ -1,0 +1,25 @@
+package com.cqupt.project.manager;
+
+import java.util.ArrayList;
+
+
+import org.springframework.stereotype.Repository;
+
+import com.cqupt.project.model.Project;
+
+<<<<<<< .mine
+public interface ProjectMapper extends BaseDao<Project,Integer>{
+   
+=======
+@Repository("projectDao")
+public interface ProjectMapper {
+    int deleteByPrimaryKey(Integer proId);
+
+    int insert(Project project);
+
+    Project selectByPrimaryKey(Integer proId);
+    
+ 
+    int modifyByPrimaryKey(Project project);
+>>>>>>> .r12
+}

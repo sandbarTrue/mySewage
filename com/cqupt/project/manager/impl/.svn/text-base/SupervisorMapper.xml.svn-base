@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.cqupt.project.manager.SupervisorMapper" >
+  <resultMap id="BaseResultMap" type="com.cqupt.project.model.Supervisor" >
+    <id column="platform" property="platform" jdbcType="CHAR" />
+    <result column="plaCettificate" property="plaCettificate" jdbcType="VARCHAR" />
+    <result column="plaRegistNum" property="plaRegistNum" jdbcType="BIGINT" />
+    <result column="plaPhoneNum" property="plaPhoneNum" jdbcType="VARCHAR" />
+    <result column="supervisorIntro" property="supervisorIntro" jdbcType="VARCHAR"/>
+    <result column="ad" property="ad" jdbcType="VARCHAR"/>
+  </resultMap>
+  <sql id="Base_Column_List" >
+    platform, plaCettificate, plaRegistNum, plaPhoneNum, supervisorIntro, ad
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from supervisor
+    where platform = #{platform,jdbcType=CHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from supervisor
+    where platform = #{platform,jdbcType=CHAR}
+  </delete>
+  <insert id="insert" parameterType="com.cqupt.project.model.Supervisor" >
+    insert into supervisor (platform, plaCettificate, plaRegistNum, 
+      plaPhoneNum, supervisorIntro, ad)
+    values (#{platform,jdbcType=CHAR}, #{plaCettificate,jdbcType=VARCHAR}, #{plaRegistNum,jdbcType=BIGINT}, 
+      #{plaPhoneNum,jdbcType=VARCHAR}, #{supervisorIntro,jdbcType=VARCHAR}, #{ad,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.cqupt.project.model.Supervisor" >
+    insert into supervisor
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="platform != null" >
+        platform,
+      </if>
+      <if test="plaCettificate != null" >
+        plaCettificate,
+      </if>
+      <if test="plaRegistNum != null" >
+        plaRegistNum,
+      </if>
+      <if test="plaPhoneNum != null" >
+        plaPhoneNum,
+      </if>
+      <if test="supervisorIntro != NULL">
+        supervisorIntro,
+      </if>
+      <if test="ad != null">
+      	ad,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="platform != null" >
+        #{platform,jdbcType=CHAR},
+      </if>
+      <if test="plaCettificate != null" >
+        #{plaCettificate,jdbcType=VARCHAR},
+      </if>
+      <if test="plaRegistNum != null" >
+        #{plaRegistNum,jdbcType=BIGINT},
+      </if>
+      <if test="plaPhoneNum != null" >
+        #{plaPhoneNum,jdbcType=VARCHAR},
+      </if>
+      <if test="supervisorIntro != null">
+      	#{supervisorIntro,jdbcType=VARCHAR},
+      </if>
+      <if test="ad != null">
+      	#{ad,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.cqupt.project.model.Supervisor" >
+    update supervisor
+    <set >
+      <if test="plaCettificate != null" >
+        plaCettificate = #{plaCettificate,jdbcType=VARCHAR},
+      </if>
+      <if test="plaRegistNum != null" >
+        plaRegistNum = #{plaRegistNum,jdbcType=BIGINT},
+      </if>
+      <if test="plaPhoneNum != null" >
+        plaPhoneNum = #{plaPhoneNum,jdbcType=VARCHAR},
+      </if>
+      <if test="supervisorIntro != null">
+      	supervisorIntro = #{supervisorIntro,jdbcType=VARCHAR},
+      </if>
+      <if test="ad !=null">
+      	ad = #{ad,jdbcType=VARCHAR},
+      </if>
+    </set>
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.cqupt.project.model.Supervisor" >
+    update supervisor
+    set plaCettificate = #{plaCettificate,jdbcType=VARCHAR},
+      plaRegistNum = #{plaRegistNum,jdbcType=BIGINT},
+      plaPhoneNum = #{plaPhoneNum,jdbcType=VARCHAR},
+      supervisorIntro = #{supervisorIntro,jdbcType=VARCHAR},
+      ad = #{ad,jdbcType=VARCHAR}
+  </update>
+  
+  <select id="getSupervisorIntro" resultType="java.lang.String">
+  	select supervisorIntro
+  	from supervisor
+  </select>
+  <select id="getSupervisorCertificate" resultType="java.lang.String">
+  	select plaCettificate
+  	from supervisor
+  </select>
+  <select id="getRegistInfo" resultType="java.lang.Long">
+  	select plaRegistNum
+  	from supervisor
+  </select>
+  <select id="getAd" resultType="java.lang.String">
+  	select ad
+  	from supervisor
+  </select>
+  <select id="getPhoneNum" resultType="java.lang.String">
+  	select plaPhoneNum
+  	from supervisor
+  </select>
+  <delete id="deleteSupervisor">
+  	delete from supervisor
+  </delete>
+  <select id="getSupervisor" resultMap="BaseResultMap">
+  	select 
+  	<include refid="Base_Column_List"/>
+  	from supervisor
+  </select>
+</mapper>

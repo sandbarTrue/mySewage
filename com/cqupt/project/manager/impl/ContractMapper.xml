@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.cqupt.project.manager.ContractMapper" >
+  <resultMap id="BaseResultMap" type="com.cqupt.project.model.Contract" >
+    <id column="contractId" property="contractId" jdbcType="INTEGER" />
+    <result column="proId" property="proId" jdbcType="INTEGER" />
+    <result column="bidId" property="bidId" jdbcType="INTEGER" />
+    <result column="companyAId" property="companyAId" jdbcType="INTEGER" />
+    <result column="companyBId" property="companyBId" jdbcType="INTEGER" />
+    <result column="platform" property="platform" jdbcType="CHAR" />
+    <result column="signDate" property="signDate" jdbcType="TIMESTAMP" />
+    <result column="tradAmount" property="tradAmount" jdbcType="DECIMAL" />
+    <result column="fileId" property="fileId" jdbcType="VARCHAR" />
+    <association property="project" column="proId"
+      javaType="com.cqupt.project.model.Project" 
+      select="com.cqupt.project.manager.ProjectMapper.selectByPrimaryKey" /> 
+   <association property="bid" column="bidId"
+      javaType="com.cqupt.project.model.Bid" 
+      select="com.cqupt.project.manager.BidMapper.selectByPrimaryKey" /> 
+   <association property="companyA" column="companyAId"
+      javaType="com.cqupt.project.model.Company" 
+      select="com.cqupt.project.manager.CompanyMapper.selectByPrimaryKey" /> 
+   <association property="companyB" column="companyBId"
+      javaType="com.cqupt.project.model.Company" 
+      select="com.cqupt.project.manager.CompanyMapper.selectByPrimaryKey" /> 
+   <association property="supervisor" column="platform"
+      javaType="com.cqupt.project.model.Supervisor" 
+      select="com.cqupt.project.manager.SupervisorMapper.selectByPrimaryKey" /> 
+  
+   <collection property="attachments" javaType="java.util.ArrayList" 
+	  ofType="com.cqupt.project.model.Attachment" column="fileId" 
+	  select="com.cqupt.project.manager.AttachmentMapper.selectAttachments" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    contractId, proId, bidId, companyAId, companyBId, platform, signDate, tradAmount, 
+    fileId
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from contract
+    where contractId = #{contractId,jdbcType=INTEGER} limit 1
+  </select>
+  <select id="findAll" resultMap="BaseResultMap" >
+    select 
+    <include refid="Base_Column_List" />
+    from contract
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from contract
+    where contractId = #{contractId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.cqupt.project.model.Contract" >
+    insert into contract (contractId, proId, bidId, 
+      companyAId, companyBId, platform, 
+      signDate, tradAmount, fileId
+      )
+    values (#{contractId,jdbcType=INTEGER}, #{proId,jdbcType=INTEGER}, #{bidId,jdbcType=INTEGER}, 
+      #{companyAId,jdbcType=INTEGER}, #{companyBId,jdbcType=INTEGER}, #{platform,jdbcType=CHAR}, 
+      #{signDate,jdbcType=TIMESTAMP}, #{tradAmount,jdbcType=DECIMAL}, #{fileId,jdbcType=VARCHAR}
+      )
+  </insert>
+  
+  <update id="updateByPrimaryKey" parameterType="com.cqupt.project.model.Contract" >
+    update contract
+    <set >
+      <if test="proId != null" >
+        proId = #{proId,jdbcType=INTEGER},
+      </if>
+      <if test="bidId != null" >
+        bidId = #{bidId,jdbcType=INTEGER},
+      </if>
+      <if test="companyAId != null" >
+        companyAId = #{companyAId,jdbcType=INTEGER},
+      </if>
+      <if test="companyBId != null" >
+        companyBId = #{companyBId,jdbcType=INTEGER},
+      </if>
+      <if test="platform != null" >
+        platform = #{platform,jdbcType=CHAR},
+      </if>
+      <if test="signDate != null" >
+        signDate = #{signDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="tradAmount != null" >
+        tradAmount = #{tradAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="fileId != null" >
+        fileId = #{fileId,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where contractId = #{contractId,jdbcType=INTEGER}
+  </update>
+</mapper>

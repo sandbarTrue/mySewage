@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.cqupt.project.manager.ProjectMapper" >
+  <resultMap id="BaseResultMap" type="com.cqupt.project.model.Project" >
+    <id column="proId" property="proId" jdbcType="INTEGER" />
+    <result column="proName" property="proName" jdbcType="CHAR" />
+    <result column="companyId" property="companyId" jdbcType="INTEGER" />
+    <result column="briefIntro" property="briefIntro" jdbcType="CHAR" />
+    <result column="proDetail" property="proDetail" jdbcType="VARCHAR" />
+    <result column="proDeadline" property="proDeadline" jdbcType="TIME" />
+    <result column="bidDeadline" property="bidDeadline" jdbcType="TIME" />
+    <result column="proBudget" property="proBudget" jdbcType="DECIMAL" />
+    <result column="ProPhoneNum" property="proPhoneNum" jdbcType="INTEGER" />
+    <result column="fileId" property="fileId" jdbcType="VARCHAR" />
+    <result column="status" property="status" jdbcType="CHAR" />
+    
+    <association property="company" column="companyId"
+      javaType="com.cqupt.project.model.Company"
+      select="com.cqupt.project.manager.CompanyMapper.selectByPrimaryKey" /> 
+  	<collection property="attachments" javaType="java.util.ArrayList" ofType="com.cqupt.project.model.Attachment"
+  		column="fileId" select="com.cqupt.project.manager.AttachmentMapper.selectAttachments" >  
+  	</collection>  
+  </resultMap>
+  <sql id="Base_Column_List" >
+    proId, proName, companyId, briefIntro, proDetail, proDeadline, bidDeadline, proBudget, 
+    ProPhoneNum, fileId, status
+  </sql>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from project
+    where proId = #{proId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.cqupt.project.model.Project" >
+    insert into project (proId, proName, companyId, 
+      briefIntro, proDetail, proDeadline, 
+      bidDeadline, proBudget, ProPhoneNum, 
+      fileId, status)
+    values (#{proId,jdbcType=INTEGER}, #{proName,jdbcType=CHAR}, #{companyId,jdbcType=CHAR}, 
+      #{briefIntro,jdbcType=CHAR}, #{proDetail,jdbcType=VARCHAR}, #{proDeadline,jdbcType=TIME}, 
+      #{bidDeadline,jdbcType=TIME}, #{proBudget,jdbcType=DECIMAL}, #{proPhoneNum,jdbcType=INTEGER}, 
+      #{fileId,jdbcType=CHAR}, #{status,jdbcType=CHAR})
+  </insert>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" >
+    select 
+    <include refid="Base_Column_List" />
+    from project
+    where proId = #{proId} limit 1
+  </select>
+  <select id="findProjects" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from project where proName like #{condition} or briefIntro like #{condition} or companyId in (select companyId from company where companyName like #{condition})
+  </select>
+  <select id="getSomeProjects" resultMap="BaseResultMap" >
+  	select 
+  	<include refid="Base_Column_List" />
+  	from project where status = 1 and proBudget >= 5000 limit #{num}
+  </select>
+  <select id="selectTotalNum" resultType="java.lang.Integer" >
+  	select 
+  	count(proId)
+  	from project where status = 1 
+  </select>
+    <select id="getSuccessProject" resultMap="BaseResultMap" parameterType="java.util.Map">
+  	select 
+  	 <include refid="Base_Column_List" />
+  	from project where status =6 limit #{pageNow} ,#{pageSize}
+  </select>
+   <select id="getSomeSuccessProject" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+  	select 
+  	 <include refid="Base_Column_List" />
+  	from project where status =6 order by proId  desc  limit 0,#{num}
+  </select>
+   <select id="getCompanySuccessProject" resultMap="BaseResultMap"  parameterType="java.lang.Integer">
+  	select 
+  	 <include refid="Base_Column_List" />
+  	from project where status =6 and companyId = #{companyId,jdbcType=INTEGER}
+  </select> 
+  <select id="getProjects" resultMap="BaseResultMap" parameterType="java.util.Map" >
+      <if test="order == 'total'" >
+        select  
+  		<include refid="Base_Column_List" />
+  		from project where status = 1 order by proId limit #{pageNow} ,#{pageSize}
+      </if>
+      <if test="order == 'bidNum'" >
+        select 
+        project.proId, proName, companyId, briefIntro, proDetail, proDeadline, bidDeadline, proBudget, 
+    	ProPhoneNum, fileId, status
+        from project left join
+		(select bid.proId as proId,
+		count(proId) as count from bid group by proId) as bidNum
+		on project.proId=bidNum.proId where status = 1
+		order by bidNum.count desc limit #{pageNow} ,#{pageSize}
+      </if>
+      <if test="order == 'bidDeadline'" >
+        select  
+  		<include refid="Base_Column_List" />
+  		from project where status = 1 order by bidDeadline limit #{pageNow} ,#{pageSize}
+      </if>
+      <if test="order == 'proBudget'" >
+        select  
+  		<include refid="Base_Column_List" />
+  		from project where status = 1 order by proBudget limit #{pageNow} ,#{pageSize}
+      </if>
+	
+  </select>
+  <update id="updateByPrimaryKey" parameterType="com.cqupt.project.model.Project" >
+    update project
+    <set >
+      <if test="proName != null" >
+        proName = #{proName,jdbcType=CHAR},
+      </if>
+      <if test="companyId != null" >
+        companyId = #{companyId,jdbcType=INTEGER},
+      </if>
+      <if test="briefIntro != null" >
+        briefIntro = #{briefIntro,jdbcType=CHAR},
+      </if>
+      <if test="proDetail != null" >
+        proDetail = #{proDetail,jdbcType=VARCHAR},
+      </if>
+      <if test="proDeadline != null" >
+        proDeadline = #{proDeadline,jdbcType=TIME},
+      </if>
+      <if test="bidDeadline != null" >
+        bidDeadline = #{bidDeadline,jdbcType=TIME},
+      </if>
+      <if test="proBudget != null" >
+        proBudget = #{proBudget,jdbcType=DECIMAL},
+      </if>
+      <if test="proPhoneNum != null" >
+        ProPhoneNum = #{proPhoneNum,jdbcType=INTEGER},
+      </if>
+      <if test="fileId != null" >
+        fileId = #{fileId,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        status = #{status,jdbcType=CHAR},
+      </if>
+    </set>
+    where proId = #{proId,jdbcType=INTEGER}
+  </update>
+  
+  <!-- 杨青 -->
+  <select id="selectProjectIds" resultType="java.util.Map" >
+  	select proId
+  	from project
+  	where companyId = #{companyId,jdbcType=INTEGER} 
+  </select>
+  <select id="selectProjectsByCompanyId" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+  	select 
+  	<include refid="Base_Column_List"/>
+  	from project
+  	where companyId = #{companyId,jdbcType=INTEGER}
+  </select>
+  
+   <select id="getCompanyTask" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+  	select 
+  	<include refid="Base_Column_List" />
+  	from project
+  	where contract.companyBId = #{companyId,jdbcType=INTEGER} and contract.proId = project.proId
+  </select>
+</mapper>

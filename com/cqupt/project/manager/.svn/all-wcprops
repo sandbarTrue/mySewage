@@ -1,0 +1,71 @@
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/sewage/!svn/ver/41/sewage/src/com/cqupt/project/manager
+END
+EngineeringMapper.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/sewage/!svn/ver/42/sewage/src/com/cqupt/project/manager/EngineeringMapper.java
+END
+ScoreMapper.java
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/sewage/!svn/ver/38/sewage/src/com/cqupt/project/manager/ScoreMapper.java
+END
+NewsMapper.java
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/sewage/!svn/ver/37/sewage/src/com/cqupt/project/manager/NewsMapper.java
+END
+ContractMapper.java
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/sewage/!svn/ver/38/sewage/src/com/cqupt/project/manager/ContractMapper.java
+END
+BidMapper.java
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/sewage/!svn/ver/42/sewage/src/com/cqupt/project/manager/BidMapper.java
+END
+UserMapper.java
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/sewage/!svn/ver/22/sewage/src/com/cqupt/project/manager/UserMapper.java
+END
+SupervisorMapper.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/sewage/!svn/ver/41/sewage/src/com/cqupt/project/manager/SupervisorMapper.java
+END
+CompanyMapper.java
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/sewage/!svn/ver/42/sewage/src/com/cqupt/project/manager/CompanyMapper.java
+END
+ProjectMapper.java
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/sewage/!svn/ver/42/sewage/src/com/cqupt/project/manager/ProjectMapper.java
+END
+AttachmentMapper.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/sewage/!svn/ver/34/sewage/src/com/cqupt/project/manager/AttachmentMapper.java
+END
+BaseDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/sewage/!svn/ver/19/sewage/src/com/cqupt/project/manager/BaseDao.java
+END

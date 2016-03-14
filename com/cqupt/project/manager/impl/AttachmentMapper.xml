@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.cqupt.project.manager.AttachmentMapper" >
+  <resultMap id="BaseResultMap" type="com.cqupt.project.model.Attachment" >
+    <id column="fileId" property="fileId" jdbcType="VARCHAR" />
+    <result column="timeFileUpload" property="timeFileUpload" jdbcType="TIMESTAMP" />
+    <result column="filePath" property="filePath" jdbcType="VARCHAR" />
+    <result column="uploadFileName" property="uploadFileName" jdbcType="VARCHAR" />
+    <result column="uploadRealName" property="uploadRealName" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    fileId, timeFileUpload, filePath, uploadFileName, uploadRealName
+  </sql>
+  <select id="selectAttachments" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from file
+    where fileId = #{fileId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from file
+    where fileId = #{fileId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.cqupt.project.model.Attachment" >
+    insert into file (fileId, timeFileUpload, filePath, 
+      uploadFileName, uploadRealName)
+    values (#{fileId,jdbcType=VARCHAR}, #{timeFileUpload,jdbcType=TIMESTAMP}, #{filePath,jdbcType=VARCHAR}, 
+      #{uploadFileName,jdbcType=VARCHAR}, #{uploadRealName,jdbcType=VARCHAR})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.cqupt.project.model.Attachment" >
+    update file
+    set timeFileUpload = #{timeFileUpload,jdbcType=TIMESTAMP},
+      filePath = #{filePath,jdbcType=VARCHAR},
+      uploadFileName = #{uploadFileName,jdbcType=VARCHAR},
+      uploadRealName = #{uploadRealName,jdbcType=VARCHAR}
+    where fileId = #{fileId,jdbcType=VARCHAR}
+  </update>
+</mapper>

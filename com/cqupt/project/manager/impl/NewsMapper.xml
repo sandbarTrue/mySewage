@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.cqupt.project.manager.NewsMapper" >
+  <resultMap id="BaseResultMap" type="com.cqupt.project.model.News" >
+    <id column="newsId" property="newsId" jdbcType="INTEGER" />
+    <result column="newsTitle" property="newsTitle" jdbcType="CHAR" />
+    <result column="newsContent" property="newsContent" jdbcType="VARCHAR" />
+    <result column="newsPhoto" property="newsPhoto" jdbcType="VARCHAR" />
+    <result column="postTime" property="postTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    newsId, newsTitle, newsContent, newsPhoto, postTime
+  </sql>
+  <select id="findAll" resultMap="BaseResultMap" >
+  select  
+   <include refid="Base_Column_List" />
+    from news
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from news
+    where newsId = #{newsId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from news
+    where newsId = #{newsId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.cqupt.project.model.News" >
+    insert into news (newsId, newsTitle, newsContent, 
+      newsPhoto, postTime)
+    values (#{newsId,jdbcType=INTEGER}, #{newsTitle,jdbcType=CHAR}, #{newsContent,jdbcType=VARCHAR}, 
+      #{newsPhoto,jdbcType=VARCHAR}, #{postTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.cqupt.project.model.News" >
+    insert into news
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="newsId != null" >
+        newsId,
+      </if>
+      <if test="newsTitle != null" >
+        newsTitle,
+      </if>
+      <if test="newsContent != null" >
+        newsContent,
+      </if>
+      <if test="newsPhoto != null" >
+        newsPhoto,
+      </if>
+      <if test="postTime != null" >
+        postTime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="newsId != null" >
+        #{newsId,jdbcType=INTEGER},
+      </if>
+      <if test="newsTitle != null" >
+        #{newsTitle,jdbcType=CHAR},
+      </if>
+      <if test="newsContent != null" >
+        #{newsContent,jdbcType=VARCHAR},
+      </if>
+      <if test="newsPhoto != null" >
+        #{newsPhoto,jdbcType=VARCHAR},
+      </if>
+      <if test="postTime != null" >
+        #{postTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.cqupt.project.model.News" >
+    update news
+    <set >
+      <if test="newsTitle != null" >
+        newsTitle = #{newsTitle,jdbcType=CHAR},
+      </if>
+      <if test="newsContent != null" >
+        newsContent = #{newsContent,jdbcType=VARCHAR},
+      </if>
+      <if test="newsPhoto != null" >
+        newsPhoto = #{newsPhoto,jdbcType=VARCHAR},
+      </if>
+      <if test="postTime != null" >
+        postTime = #{postTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where newsId = #{newsId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.cqupt.project.model.News" >
+    update news
+    set newsTitle = #{newsTitle,jdbcType=CHAR},
+      newsContent = #{newsContent,jdbcType=VARCHAR},
+      newsPhoto = #{newsPhoto,jdbcType=VARCHAR},
+      postTime = #{postTime,jdbcType=TIMESTAMP}
+    where newsId = #{newsId,jdbcType=INTEGER}
+  </update>
+</mapper>
